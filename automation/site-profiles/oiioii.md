@@ -1243,3 +1243,115 @@ Total: 6 batches, ~15 tool calls, ~25-35 秒。
 3. **批次 8 click 改 4 click** — 把 model selector + settings 合併
 4. **`\n` 替代符**：實測 `;` / `；` / `\n` 全空格化都可，但保留 `[label]` 分段 Seedance 仍正確解析
 
+
+---
+
+### 12.10.1 ⛔ 故事動畫 mode 警告：**不要拿來做廣告**（2026-05-19 實戰打臉）
+
+**TL;DR：「Seedance 2.0 故事動畫」chip 不是 fast path — 它是長劇本生成 pipeline，扣 STAR 兇 + 多步點選 + 不適合 15s 廣告。做廣告永遠用 §12.10 的自由畫布 6-batch。**
+
+---
+
+#### 我的錯誤假設（不要重蹈）
+
+主頁「Seedance 2.0 故事動畫」chip 預設選中 + 主 prompt input 看起來能直接 type + send，我**錯誤推測**這是「3-batch 極簡 SOP」。實測：
+
+- 不是。送出後進**劇本編輯 panel**，**不是直接生成**
+- 還要點：影片長度（短影片<1min / 長影片≥1min）、影片比例（16:9/9:16）、對白語言（英文/中文/日文）
+- 點完才能 enable「確認並編輯」按鈕進**下一個** panel（多 shot 編輯）
+- 每個 shot 個別 confirm
+- 最終才扣費
+
+#### 為什麼貴 + 慢
+
+故事動畫 = **多 shot 長劇本**，不是 15s 廣告：
+- 短影片模式：可能 30s-1min（多個 shot stitched）
+- 長影片模式：≥1min（更多 shot）
+- 假設 30s = 2 × 15s = **420 STAR ≈ NT$100**
+- 假設 1min = 4 × 15s = **840 STAR ≈ NT$200**
+- 假設 5-shot storyboard 1min = 可能要 **800+ STAR**
+
+對比：自由畫布 15s 廣告 = 210 STAR ≈ NT$50。
+
+**STAR / NT$ 換算：210 STAR ≈ NT$50 ≈ NT$0.24/STAR ≈ Seedance 2.0 pro NT$3.3/秒**
+
+#### 故事動畫實際 flow（觀察 2026-05-19）
+
+```
+Step 1: 主頁 type prompt + send
+Step 2: 進 workspace → 右側出現「我的劇本」面板
+Step 3: 左側出現選項面板：
+        - 影片長度（短/長）          ← 必選
+        - 影片比例（16:9/9:16）       ← 必選
+        - 對白語言（英/中/日）        ← 必選
+        - 「確認並編輯」按鈕（disabled 直到全選完）
+Step 4: 點確認 → 進多 shot 編輯（待驗證的下一步）
+Step 5: 逐 shot confirm / 改劇本
+Step 6: 最終 commit → 扣 STAR
+```
+
+**Total: 6+ batches，數倍 STAR**，比 §12.10 自由畫布的 6-batch / 210 STAR **更貴更慢**。
+
+#### ✅ 何時用故事動畫
+
+- 真的要做**多 shot 長故事**（30s-1min+）
+- 願意花更多 STAR
+- 希望 OiiOii 幫你**自動拆 shot list**（懶得自己寫多鏡 prompt）
+
+#### ❌ 何時不用故事動畫（絕大部分情境）
+
+- 15s 廣告 → 用 §12.10 自由畫布（210 STAR 一次到位）
+- 想精準控制 duration / aspect / resolution / 模型 → 用 §12.10
+- token / STAR 敏感 → 用 §12.10
+- 趕時間 → 用 §12.10
+
+#### 💡 真正的 SOP 選擇
+
+| 情境 | 用哪個 |
+|---|---|
+| **15s 標準廣告** | **§12.10（自由畫布 6-batch，210 STAR）✅** |
+| 5s / 10s 短廣告 | §12.10 自由畫布（70 / 140 STAR）|
+| 9:16 直版 / 1:1 方形 | §12.10 自由畫布 |
+| 1080p（非 720p）| §12.10 自由畫布 |
+| Sora 2 / Seedance fast 等 | §12.10 自由畫布 |
+| **30s-1min 多 shot 長故事** | §12.10.1 故事動畫（800+ STAR）|
+
+#### 中止 / abort 故事動畫不扣費
+
+只要**不點「確認並編輯」**就不會扣 STAR。可以：
+- 按瀏覽器 back / navigate 回主頁 → workspace 還在，但沒扣費
+- 或直接 navigate 走
+
+#### 🎯 主頁 input 元素座標（viewport 705）
+
+| 元素 | 座標 | 用途 |
+|---|---|---|
+| Prompt input area | (777, 240) | 主 textarea |
+| Send button（紫色箭頭）| (1081, 325) | 送出 — ⚠️ 看模式不同會路由到劇本編輯（不是直接生成）|
+| Seedance 2.0 故事動畫 chip | (628, 379) | 預設選中 — **做廣告請改點自由畫布！** |
+| 自由畫布 chip | (758, 379) | **做廣告請選這個** ✅ |
+| 劇情故事短片 chip | (860, 379) | narrative mode（也是長劇本，慎用）|
+| 角色設計 chip | (962, 379) | character design |
+
+#### 💰 STAR / 台幣 換算（2026-05-19 user 提供）
+
+**210 STAR ≈ NT$50**  →  1 STAR ≈ NT$0.24
+
+| 任務 | STAR | NT$ |
+|---|---|---|
+| Seedance 2.0 pro 5s | 70 | ~17 |
+| Seedance 2.0 pro 10s | 140 | ~33 |
+| Seedance 2.0 pro 15s | **210** | **~50** |
+| Seedance 2.0 fast 15s | ~147 | ~35 |
+| 故事動畫 30s（推估）| ~420 | ~100 |
+| 故事動畫 1min（推估）| ~840 | ~200 |
+
+**SOP 選擇 = 用戶的真實成本控制。** 永遠先問「用戶要花多少」再選 path。
+
+#### 📌 教訓
+
+- 不要看到 chip「預設選中」就假設那是 fast path
+- UI 看不出來的流程必須先**走一遍**才知道（但要在 abort 點之前停）
+- 「chip 名稱」≠「執行成本」— 同一個 prompt 在不同 mode 扣費差幾倍
+- 用戶提到「貴」就要立刻**重新評估 SOP 選擇**，不要繼續按假設執行
+

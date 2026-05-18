@@ -2,6 +2,38 @@
 
 All notable changes to this skill are documented here.
 
+## [1.2.1] - 2026-05-19 — Story-mode warning (correction)
+
+**Critical correction to v1.2.0.** While documenting v1.2.0 I had appended a §12.10.1 claiming「Seedance 2.0 故事動畫」chip from home page is a "3-batch express SOP". **This was wrong** — caught immediately by the user during validation:
+
+- Story-mode is NOT a fast direct-generation path
+- Send routes to a script-editing panel requiring duration + aspect + dialogue language selections
+- Then multi-shot editing flow
+- Then commit → STAR cost is multiples of a standard 15s ad
+
+### Corrected guidance now in §12.10.1
+
+- Story-mode = long multi-shot pipeline (30s-1min+ video)
+- Estimated cost: 420-840+ STAR (~NT$100-200)
+- Standard 15s ad: ALWAYS use §12.10 自由畫布 6-batch (210 STAR ~NT$50)
+- Story-mode only worthwhile for genuine multi-shot narratives where you want OiiOii to auto-split shots
+
+### STAR / NT$ conversion (user-confirmed)
+
+210 STAR ≈ NT$50 → 1 STAR ≈ NT$0.24 → Seedance 2.0 pro ≈ NT$3.3/sec.
+
+Full cost matrix added to §12.10.1.
+
+### Lesson documented
+
+"Chip pre-selected" ≠ "fast path". Always walk the flow once before assuming, and abort before any commit point if cost mismatches user intent.
+
+### Files changed
+
+- `automation/site-profiles/oiioii.md` — §12.10.1 fully rewritten as warning + correct guidance
+
+---
+
 ## [1.2.0] - 2026-05-19 — OiiOii Seedance 2.0 pro Express SOP
 
 Second-round real-world optimization based on a full interior-design ad generation session.
