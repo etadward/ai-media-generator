@@ -21,25 +21,51 @@
 
 ## 🎥 影片模型 per-model 簽名
 
-### Seedance 2.0 pro / 1.5
-- **結構：** 8 維 — Subject + Action + Scene + Light + Camera + Style + Quality + **Constraints**
-- **長度：** 60-100 字（useful 30-200）
+### Seedance 2.0 pro / 1.5（2026-05-18 大更新 — 107 prompts 證據）
+
+> **Source：** [YouMind-OpenLab/awesome-seedance-2-prompts](https://github.com/YouMind-OpenLab/awesome-seedance-2-prompts) (CC BY 4.0, 6 Featured + 101 curated)
+
+- **結構（首選 — 多鏡頭）：** Bracketed labels
+  ```
+  [Style] + [Duration] + [Scene] + [Character] + 
+  [Shot N: time] {Visuals: / Action: / Details:} × 3-5 + 
+  [Audio] + [Constraints]
+  ```
+- **結構（單鏡頭 5-10s）：** 一句 format anchor → subject → camera → action → no-X negatives → resolution
+- **長度：** **單鏡 60-100 字 / 多鏡 200-700 字**（前期我說 30-200 是錯的，多鏡需要更長）
+- **時間區塊格式**（全部都吃）：`[00:00-00:05]` / `(0-2s)` / `[00–05s]` / `0-3 seconds:` / `[0–2 SEC]`
 - **簽名 token：**
-  - 鏡頭：`low-angle circling`, `over-shoulder counter`, `lateral whip-pan`, `snap zoom on impact`, `handheld shake`, `orbit 環繞`, `tracking 跟拍`, `特寫衝擊`
-  - 語氣：中文武打/古裝寫中文 > 英文（native multilingual encoder）
-  - 物理詞：`realistic weight transfer, momentum, recovery` > "powerful"
-  - 視覺：`sword light trails, splashing water, flying rubble, sparks, shockwaves`
-- **Constraints tail（必放）：** `no shake, no warping, no extra limbs, locked horizon, stable temporal coherence`
-- **禁忌：**
-  - ❌ "fast" — 最爛關鍵詞，degrades quality。改 "slow-motion / smooth / sustained"
-  - ❌ 多動詞同句（charging + swinging + slashing = 災難）
-  - ❌ 多主體獨立動作（A 打 B 閃 C 射 → 三者都 fail）
-  - ❌ 負面 prompt `--no blur`（不支援）
-  - ❌ chaotic wide 戰場 → 失敗率最高
-  - ❌ 英文導演名（Kurosawa-style）— 弱證據
+  - **Bracketed labels：** `[Style]`, `[Scene]`, `[Character]`, `[Shot N]`, `[Duration]`, `[Audio]`, `[Constraints]`
+  - **Sub-labels in shot：** `Visuals:`, `Action:`, `Details:`, `Atmosphere:`, `Special Effects Details:`
+  - **Format anchor：** `ESPN-style 16:9`, `Hollywood live-action`, `Sony A7S3/cinema camera`, `IMAX Fantasy Camera`, `Dolby Atmos`, `Unreal Engine 5 fluid rendering`, `90s anime film style`, `Pixar style`, `Fast and Furious inspired`
+  - **鏡頭/焦段（**有效**）：** `35mm follow shot`, `50mm lateral tracking`, `28mm push-in`, `Macro lens`, `IMAX whip-pan`, `360-degree rotation`, `low-angle circling`, `orbit`, `handheld shake`
+  - **解析度（有效）：** `4K`, `8K`, `UHD`, `1080p`
+  - **動態詞：** `extreme speed`, `high-octane`, `kinetic`, `explosive acceleration`, `rapid`, `slow-motion impact`
+  - **物理詞：** `realistic weight transfer, momentum, recovery, sweat, fabric movement`
+  - **視覺：** `sword light trails, splashing water, flying rubble, sparks, shockwaves, dust plumes`
+  - **Quoted dialogue（會 lip-sync）：** `"What are you looking at?"` / 日文 `「今日は世界を滅ぼさない。」` + `Subtitle:` 雙語
+  - **Lip-sync directive：** `200-400ms pauses, mouth only moves slightly when speaking, emotional micro-tremors synchronized with breathing`
+- **Constraints tail（必放）：** `no deformation, no drift, no artifacts, no extra text/watermarks, locked horizon, stable temporal coherence`
+- **Audio Profile（Seedance 2.0 殺手鐧 — 4-modal 支援原生音訊）：**
+  ```
+  Sound design: <ambient SFX>, <action SFX>, <breathing>, <music genre + instrument>
+  ```
+- **中文 vs 英文：** **武打/古裝/romance/MV** 寫中文 > 英文（Featured #1 #4 #5 全中文）；西方場景英文較順
+- **禁忌（更新版）：**
+  - ❌ `fast` — 仍是最爛詞，改 `extreme speed / high-octane / kinetic / rapid`
+  - ❌ 多動詞同句 — 仍 true（一個 time block 一個 ONE verb）
+  - ❌ 多主體獨立動作（A 打 B 閃 C 射）
+  - ❌ `--no blur` flag 語法（不支援，但 `no X` 自然語言 OK）
+  - ❌ Chaotic wide 戰場無時間區塊 → 失敗率最高（**3-5 shots 有時間區塊 OK**）
+  - ⚠️ 個別 DP 名（Deakins、Lubezki）— 弱證據；**藝術運動/品牌風格名（Pixar / Ghibli / 90s anime）✅ 有效**
 - **戰鬥 three-beat**：wide 建立間距 → medium 跟拍節奏 → close-up 衝擊/呼吸/腳步
-- **騎馬專 tip：** 低角度 tracking dolly **沿馬側**跑 + dust/steam 粒子 + locked horizon + 1 鏡慢動作（不要 chaotic wide cavalry charge）
-- **Reference video cheat：** 上傳 ≤15s 動作參考 + prompt 寫 `imitate the movements of @video1` — 中國創作者公認武打最大 quality jump
+- **騎馬專 tip：** 低角度 tracking dolly **沿馬側**跑 + dust/steam 粒子 + locked horizon + 1 鏡慢動作
+- **Reference video cheat：** 上傳 ≤15s 動作參考 + `imitate the movements of @video1` — 武打最大 quality jump
+- **2026-04-21 vs 2026-05-18 推翻清單**（重要）：
+  - ❌ 之前說「`cinematic` 是 generic」→ ✅ Seedance 2.0 大量吃
+  - ❌ 之前說「35mm 沒效」→ ✅ 焦段 token 有效
+  - ❌ 之前說「4+ shots 擠 15s」→ ✅ 3-5 shots/15s 是甜蜜點（有時間區塊前提）
+  - ❌ 之前說「`8K` 是 generic」→ ✅ Seedance 2.0 對解析度 token 有反應
 
 ### Kling 3.0 / 2.1（快手）
 - **結構：** Scene → Characters → Action → Camera → Audio
@@ -146,7 +172,7 @@ Corporate headshot of a middle-aged Asian businessman, navy suit, neutral gray b
 ## 🎯 跨模型 workflow 組合（實戰）
 
 ### 寫實戰鬥短片（當前 use case）
-1. **Nano Pro / Midjourney v7 + your character ref** → 生 key frame 圖（含武打氛圍）
+1. **Nano Pro / Midjourney v7 + Hao0321 ref** → 生 key frame 圖（含武打氛圍）
 2. **Kling 3.0 / Sora 2 / Veo 3.1** 用該圖做 i2v
    - Kling：40-80 字、handheld + whip pans
    - Sora 2：format anchor (`bodycam footage of ancient battle`)

@@ -862,3 +862,414 @@ saturated, dry not glistening, dusty
 - **Sora 2**：把 10s preset 拆成 3 beats，每 beat 一段
 - **Seedance Pro**：用 `Cut to:` 串多個 preset 成多鏡
 - **Runway Aleph**：改成動詞開頭 (`restyle...` / `add...`) 配既有影片
+
+---
+
+## 🎬 Seedance 2.0 Community Featured (2026-05-18)
+
+**Source:** [YouMind-OpenLab/awesome-seedance-2-prompts](https://github.com/YouMind-OpenLab/awesome-seedance-2-prompts) (CC BY 4.0, attribution required)
+
+6 hand-picked prompts from community + 4 best-pattern examples. Each has demonstrated outstanding Seedance 2.0 output.
+
+> ⚠️ All prompts below are reproduced under CC BY 4.0. Original authors credited per-preset.
+
+### S1. 日系青春純愛 15s 多鏡（中文）— Featured #1
+
+**Use case:** Romance、純愛、表情張力、教室、暗戀情境
+**Target:** Seedance 2.0 pro，15s，16:9，720p+
+**Author:** AIGC｜阳家豪 ([@JiahaoYang_art](https://x.com/JiahaoYang_art))
+
+```
+15 秒電影感日系純愛曖昧短片，極致寫實質感，午後空教室裡溫暖金色陽光透過百葉窗灑在並排的書桌上，細小塵埃在光束中緩慢漂浮，老舊木質書桌，極其自然細微的動作、呼吸與眼神張力，人物全程保持一致的臉孔、衣著與髮型，不變形、不漂移、不出現偽影，真實微妙的胸口起伏與呼吸同步，淺景深，奶油散景，溫暖底片顆粒，8K 銳利，日系青春克制悸動窒息氛圍。
+0-4 秒：從桌面中景極緩推鏡至兩人並肩側臉特寫。穿夏季校服的純真少女低頭專注寫筆記，烏黑長髮與耳邊碎髮被微風輕輕揚起，長睫毛在臉上投下淡淡陰影，肌膚自然粉嫩，因專注而嘴角不自覺微揚，呼吸輕勻。
+4-9 秒：切到男孩特寫。校服衣領微鬆，他撐肘趴桌偷偷側頭凝視她，眼中盛滿溫柔克制的愛意與溫暖,瞳孔輕微擴大,喉結輕滾。突然察覺她筆停下,慌張快速轉頭裝作看自己的筆記,耳垂迅速微紅,指尖握筆微顫,偶爾從瀏海下偷瞄她,呼吸略亂,雙唇緊抿努力鎮定。
+9-15 秒：兩人面孔同框極特寫,慢鏡頭眼神突然相對:少女緩緩抬頭,先是怔忡驚訝,隨即羞紅快速垂眸 0.3 秒,輕咬下唇,雙頰與耳垂瞬間綻放櫻花粉,濕潤睫毛怯怯抬眼再度迎上他目光,同時輕柔害羞地低聲呢喃:"...你在看什麼?";男孩瞳孔放大徹底僵住 0.4 秒,慌張低聲結巴回應:"沒...沒什麼...". 少女更小聲咬唇又偷看,繼續低聲:"...騙人。". 男孩頓住,輕嘆低語:"...就是想看你。",嘴角緩慢揚起羞澀溫柔歪笑,眼角細紋出現,呼吸明顯加深。兩張臉之間曖昧張力被無形電流拉扯,分享彼此呼吸溫度,背景完全融化成奶油夢幻光斑、溫暖光暈與細密空氣微粒層次。
+唇形同步自然精準,情緒微顫與呼吸同步,對白為低能量氣音,語氣羞澀,自然短停頓 200-400 毫秒,口型僅在發聲時微動,不誇張不機械,呈現完美自然唇音與情緒真實感。
+整體音效:遠處夏蟬隱約鳴叫,筆尖觸紙的柔軟刮擦聲,心跳低頻幾乎不可聞地脈動,最終淡入極輕柔氣音鋼琴。對白完全自然融入場景的氣音呢喃,女孩聲音柔軟害羞,男孩從慌張結巴轉為溫柔。
+角色身份始終保持一致,真實細微頭部傾斜、眼神移動與呼吸同步,無文字、浮水印、字幕,純日系青春暗戀心動懸念。
+```
+
+**Why:** Bracketed-style header + 3-shot 5s blocks + 對白雙語 + 詳細 lip-sync directive + Sound design + Constraints tail。**這個 prompt 是 Seedance 2.0 「日系純愛」最完整 reference。**
+
+**Swap points:**
+- 場景：教室 → 圖書館 / 雨後巷弄 / 校園櫻花樹下
+- 互動：偷看 → 同撐傘 / 一起整理書 / 籃球場邊
+- 對白：保留 lip-sync directive 但改台詞
+
+---
+
+### S2. Hollywood 高級訂製奇幻 15s（中文）— Featured #2
+
+**Use case:** 高奢時尚、超寫實奇幻、流體渲染、視覺特效
+**Target:** Seedance 2.0 pro，15s，16:9
+**Author:** John ([@johnAGI168](https://x.com/johnAGI168))
+
+```
+[風格] 好萊塢高級訂製奇幻巨作，8K 超高清，超寫實，時尚編輯風格，Unreal Engine 5 流體渲染，視覺錯覺。[時長] 15 秒。[場景] 無邊無際、真實的烏尤尼鹽沼（天空之鏡）鹽灘。天空佈滿壓抑的烏雲，地面完美地反射一切，如同鏡子一般，整體畫面呈現極簡的冷色調。
+
+[00:00-00:05] 鏡頭 1：高級訂製入場與瓷肌。攝影機位置：極低角度仰拍，超長焦鏡頭推近。動作：一位具有高度辨識度、時尚臉孔的亞洲女模特兒，在水面上酷酷地行走。效果：她穿的不是布料，而是一件由流動的、真實的液態青花瓷製成的長裙。隨著她走動，裙擺發出真實陶瓷般清脆的碰撞聲，表面是流動的釉光，傳統青花紋路在白瓷質感的裙擺上彷彿活著般移動。
+
+[00:05-00:10] 鏡頭 2：物理粉碎與水墨墜落。攝影機位置：臉部極特寫，焦點快速拉遠。動作：模特兒突然停下，冷冷地凝視鏡頭，清脆地打了個響指。效果：手指打響的瞬間，她的青花瓷長裙並未掉落，而是瞬間炸開成數千隻極致寫實的水墨燕子。這些燕子帶著真實的水滴與墨痕，拖著黑色流體殘影，瘋狂地繞著她旋轉。
+
+[00:10-00:15] 鏡頭 3：維度溶解與深淵倒影。攝影機位置：高空俯視鏡頭，攝影機快速旋轉下降。動作：水墨燕群俯衝進入模特兒腳下的鏡面湖水。效果：原本堅實的鹽湖表面張力瞬間消失。整個極致寫實的世界開始像濃墨滴入清水般劇烈滲血、溶解。真實烏雲與模特兒身形整個轉化成一個極為宏偉的 3D 流體水墨漩渦，將鏡頭徹底吞沒進黑白交織的深淵。
+```
+
+**Why:** 完整 bracketed header + 3-shot 5s blocks + format anchor (`Unreal Engine 5 流體渲染`) + 攝影機位置 + 動作 + 效果三層分解。**水墨/中國美學 + 西方高奢 fusion 的範本。**
+
+**Swap points:**
+- 場景：鹽沼 → 沙漠 / 海面 / 雪原
+- 材質變形：青花瓷 → 水晶 / 鎏金 / 流動火焰
+- 終極變身：水墨燕子 → 玻璃蝴蝶 / 光點 / 花瓣風暴
+
+---
+
+### S3. 現代田園美學療癒短片 15s（中文）— Featured #3
+
+**Use case:** 療癒、生活感、ASMR、Slow living、商業形象短片
+**Target:** Seedance 2.0 pro，15s，16:9
+**Author:** John ([@johnAGI168](https://x.com/johnAGI168))
+
+```
+[風格]
+現代田園美學，電影級商業質感，Sony A7S3/cinema camera 拍攝，4K/8K 超清，極致 Macro，自然透光，治癒系 ASMR，無古裝劇感。
+
+[場景]
+精心打理的現代農舍開放式廚房，背景是茂密的蔬菜花園，明亮陽光。
+
+[人物]
+現代田園創作者，烏黑長髮用木質髮簪隨意盤起，穿深藍色舒適亞麻服飾，乾淨妝容，專注平和的眼神。
+
+[分鏡細節]
+[00:00-00:05] 鏡頭 1：晨間採摘（鮮活感）
+畫面：高清特寫。晨光以側逆光打在植物上。
+動作：創作者赤裸的雙手（修長乾淨的手指）從藤上摘下一顆閃著露珠的鮮紅番茄。
+細節：焦點極銳利，清晰呈現番茄表皮的細毛與水珠滑落軌跡。背景是高品質虛化的綠色。
+
+[00:05-00:10] 鏡頭 2：極致工藝（手藝感）
+畫面：室內灶台區域，生活感卻一塵不染。
+動作：創作者正在切菜，動作熟練精準（非表演性質）。
+細節：Macro 鏡頭捕捉刀刃切入食材的瞬間，汁水飛濺。隨後切換到土灶中跳動的橘色火焰，光影溫暖真實。
+
+[00:10-00:15] 鏡頭 3：寧靜時光（瞬間感）
+畫面：全身鏡頭/中景。
+動作：精緻的家常菜被擺在院子的木質長桌上。創作者靜靜坐下，輕輕整理一縷散髮，拿起一口食物。
+氛圍：蒸氣在逆光中緩緩升起，場景安靜得彷彿能聽見風聲，呈現現代人嚮往的極致鬆弛感。
+```
+
+**Why:** Bracketed header + Character card + 3-shot 結構 + Visuals/動作/細節三層解析 + format anchor (`Sony A7S3`)。療癒系商業短片 gold standard。
+
+**Swap points:**
+- 場景：田園 → 海邊 / 山中 / 都市陽台
+- 動作：採番茄 → 揉麵 / 沖咖啡 / 插花
+- 風格：田園 → 北歐極簡 / 日式侘寂 / 法式鄉村
+
+---
+
+### S4. 真人版動漫呼吸法決鬥 15s（中文）— Featured #4
+
+**Use case:** 動漫真人化、武打/呼吸法、特效對決、爆炸光效
+**Target:** Seedance 2.0 pro，15s，16:9
+**Author:** John ([@johnAGI168](https://x.com/johnAGI168))
+
+```
+真人版動漫改編・呼吸法巔峰決戰（15 秒・超燃特效版）
+【核心焦點】：水之呼吸（藍色水龍） VS 雷之呼吸（金色閃電），真人極速對決。
+
+【風格】：好萊塢真人版動漫改編電影質感，黑暗武士風，4K 超清，極速快剪，爆炸性粒子光效，不血腥。
+【時長】：15 秒
+【場景】：月光下的迷霧森林，泥濘地面，落葉。
+
+[00:00-00:05] 鏡頭 1：水之韻律前奏・起手式（蓄勢感）
+畫面：身穿綠黑棋盤紋羽織（夾克）的年輕武士，月光下重心壓低，雙手握劍。
+動作：他深吸一口氣，周圍空氣瞬間凝結。拔劍出鞘的同時，由高壓水流凝聚而成的巨大藍色水龍憑空出現，在他身體與劍身周圍快速旋轉，發出流水的咆哮。
+特效細節：水流具有真實的飛濺感，照亮黑暗森林。
+
+[00:05-00:10] 鏡頭 2：雷之閃電・突進（極速感）
+畫面：對手是身穿黃色三角紋羽織的金髮劍客，極低姿勢蹲下，採居合道（拔刀術）的架勢。
+動作：地面突然爆裂，他瞬間化為耀眼金色閃電殘影，以肉眼無法捕捉的速度在森林中以「Z 字形」折射衝刺。
+特效細節：他經過的地方留下金色電弧與焦黑落葉。
+
+[00:10-00:15] 鏡頭 3：水雷碰撞・終焉之音（必殺技交鋒）
+畫面：極速碰撞。年輕武士揮動巨大藍色水龍迎擊，化為閃電的金髮劍客正面撞上。
+動作：兩把刀在畫面中央劇烈碰撞。
+特效奇觀：藍色水龍與金色閃電瞬間爆炸，形成巨大水雷能量風暴向外擴散。周圍大樹被能量波震斷成兩截，泥土與光遮蔽鏡頭。場景在極度炫目的藍、黃、白光中結束。
+```
+
+**Why:** 動漫真人化 prompt 的範本 — 用了 `【核心焦點】` 標籤 + 3-shot blocks + 每 shot 分「畫面/動作/特效細節」。可以套到任何雙人對決場景。
+
+**Swap points:**
+- 對決元素：水 vs 雷 → 火 vs 冰 / 風 vs 土 / 光 vs 影
+- 角色服飾：羽織 → 連帽斗篷 / 機甲 / 現代武術服
+- 場景：森林 → 沙漠 / 都市天台 / 太空站
+
+---
+
+### S5. 80 歲老奶奶 Rap MV 15s（中文）— Featured #5
+
+**Use case:** Music Video、街頭嘻哈、反差人物、Trap beat、quoted dialogue + lip-sync
+**Target:** Seedance 2.0 pro，15s，16:9
+**Author:** 松果先森 ([@songguoxiansen](https://x.com/songguoxiansen))
+
+```
+16:9 橫屏，街頭 rap MV 風格，霓虹紫藍冷色調，爆炸性的冷酷狂野氛圍。
+
+0-3 秒：中景推鏡，城市街道夜景閃爍霓虹燈，一位 80 歲銀髮老奶奶站在塗鴉牆前，短銀白髮俐落後梳，方臉輪廓鮮明，劍眉斜飛入鬢，眼神銳利如電，眼角皺紋如時光勳章，嘴角自信笑意，身穿黑色皮夾克外搭白色印花 T 恤（胸前黑色大字「YOLO」）+ 黑色工裝褲 + 白色高筒運動鞋，脖子掛粗金鏈，手腕銀手鐲，雙手舉麥克風，BGM 強勁鼓點響起，老奶奶眼神一凜，雙唇張開開始 Rap。
+
+3-7 秒：中景+特寫切換，老奶奶開始 rap，節奏感極強，銀髮隨點頭動作飛揚，一手持麥，另一手隨節奏比手勢——食指指鏡頭、手掌上下切節拍、做 hip-hop 手勢，動作流暢瀟灑，眼神銳利直視鏡頭，皺紋隨表情生動跳動，雙唇開合迅速吐出歌詞：
+
+[Rap 歌詞]
+"八十歲的腿腳，能跳得比你還溜！
+銀髮飄揚，這是我的驕傲！
+別說我老，我的 Flow 比你還潮，
+你玩 rap 時，我在聽 disco！"
+
+（語速快、節奏強、態度凶）
+
+快剪：面部特寫、手部動作、全身搖擺、側面剪影，與 BGM 節拍同步。
+
+7-11 秒：舞蹈段落，鏡頭拉遠展示全身，老奶奶開始跳舞——先是經典 hip-hop bounce，接著俐落街舞 freeze，緊接一個從肩膀傳到腳尖的 body wave，再來快速 footwork 練步，動作乾淨利落，銀髮在霓虹下飛揚，皮夾克在空中翻飛，邊跳邊繼續 Rap：
+
+[Rap 歌詞]
+"手腳麻利速度不慢，我的歌詞刻進時間！
+你們玩手機，我玩節拍，八十年人生寫進這段！"
+
+（節奏更快、語調更狠）
+
+低角度仰拍 + 360 度環繞鏡頭，捕捉老奶奶酷帥的舞步。
+
+11-15 秒：高潮收尾，老奶奶酷帥轉身，銀髮在空中劃出弧線，正對鏡頭做一個食指比「噓」的手勢，然後雙唇貼近麥克風，低聲磁性地唱出最後一句：
+
+[現實歌詞]
+"時光從未敗給美人，我只是換了種方式體驗青春..."
+
+（節奏放慢、情感深沉、餘韻不絕）
+
+鏡頭緩慢推近老奶奶眼眸特寫，眼角皺紋全是故事，眼神依然銳利卻多了一絲溫柔，BGM 在高潮處戛然而止，畫面定格在老奶奶酷帥又略帶溫柔的笑容上，暗角 + 霓虹紫光暈。
+
+整體音樂：Trap 電子節奏 + 重 808 鼓 + 街頭嘻哈 sample
+整體氛圍：反差感（年齡 vs 態度）+ 街頭嘻哈文化 + 復古酷感
+```
+
+**Why:** Music video 的範本 — 4-shot 結構（intro/verse/chorus/outro）+ [Rap 歌詞] / [現實歌詞] tag + lip-sync 對白 + 整體音樂層 + 360 度環繞鏡頭。**反差人設 + 雙語歌詞 + lip-sync** 三位一體。
+
+**Swap points:**
+- 角色：80 歲奶奶 → 5 歲小孩 / 修女 / 商務人士
+- 音樂：Trap → Lo-fi / K-pop / 古風電音
+- 服飾：嘻哈造型 → 古風漢服 / 童裝 / 西裝
+
+---
+
+### S6. 電影感賽車街頭夜飆 15s（英文）— Featured #6
+
+**Use case:** 賽車、極速、Fast & Furious 風、霓虹都市、NOS 爆炸瞬間
+**Target:** Seedance 2.0 pro，15s，16:9
+**Author:** Pierrick Chevallier | IA ([@CharaspowerAI](https://x.com/CharaspowerAI))
+
+```
+cinematic street racing sequence at night, a focused driver inside a high-performance car grips the steering wheel, intense eye focus, city lights reflecting on windshield, tension building before sudden acceleration
+
+camera: rapid multi-angle system with seamless transitions, interior close-up → over-the-shoulder → exterior tracking → low ground shots, ultra dynamic camera movement, whip pans + speed ramp transitions + motion blur masking cuts, continuous flow illusion
+
+(0-2s) interior close-up on driver, hand tightens on gear shift, subtle breathing, dashboard lights glowing
+(2-4s) over-the-shoulder shot, road ahead stretching into neon-lit city, engine vibration building
+(4-6s) extreme close-up on finger pressing NOS button, instant ignition reaction
+(6-8s) explosive acceleration, camera snaps to exterior side tracking shot, car launches forward with violent speed surge
+(8-10s) ultra low ground shot near asphalt, wheels spinning at extreme velocity, environment streaking past
+(10-12s) high-speed chase through tight streets, sharp turns, camera whip pans between angles, reflections and light trails enhancing speed
+
+Dense urban night environment, wet asphalt reflecting neon lights, tunnel passages, street lights streaking, high-speed city atmosphere
+Ultra realistic, fast and furious inspired energy, photorealistic lighting, intense motion blur, high contrast neon reflections, cinematic depth of field, extreme sense of speed, fluid transitions, no distortion, no stretching
+```
+
+**Why:** 英文版範本 — 比中文 prompt 短（~200 字），用 `(0-2s)` 簡潔時間區塊。`camera:` 分段集中描述。`Fast and Furious inspired` 是 brand-style format anchor。**Pure-English Seedance 範本。**
+
+**Swap points:**
+- 場景：街道 → 高速公路 / 海邊公路 / 山路
+- 車輛：tuner car → 摩托車 / 卡丁車 / 重機
+- 風格：Fast and Furious → Mad Max / Initial D / Cyberpunk 2077
+
+---
+
+### S7. 寫實詠春 Wing Chun 15s（英文，焦段示範）
+
+**Use case:** 武術、寫實風格、specific 焦段 token、動作運鏡
+**Target:** Seedance 2.0 pro，15s，16:9
+**Author:** Jahan Zaib ([@jzaib4269](https://x.com/jzaib4269))
+
+```
+REALISTIC CINEMATIC 15s PROMPT — Japanese Wing Chun Martial Artist
+Ultra-realistic cinematic martial arts sequence.
+A 35-year-old Japanese martial artist trains intensely with a traditional wooden Wing Chun dummy inside a Japanese outdoor courtyard.
+Lean athletic build, sharp focused eyes, defined jawline, short slightly messy black hair, subtle facial stubble, calm disciplined expression, realistic skin texture with sweat and natural imperfections. Wearing a fitted black training shirt and loose dark martial arts pants.
+Environment: traditional Japanese courtyard with textured stone pavement, bamboo plants, wooden architecture, paper sliding doors, atmospheric dust particles, soft daylight, cinematic shadows, subtle wind movement, shallow depth of field, grounded realism.
+Style: high-end live-action realism inspired by modern Japanese and Hong Kong martial arts cinema. Physically accurate movement, realistic muscle tension, cinematic contrast, subtle film grain, immersive atmosphere, dynamic camera movement, authentic choreography. No anime, no CGI look, no digital painting, no commercial aesthetic.
+Sequence progression:
+— Hard-cut opening, close 35mm follow shot. The martial artist is already moving rapidly through continuous Wing Chun trapping hands, chain punches, compact strikes, and quick front kicks against the wooden dummy. Fast but controlled footwork across stone pavement. Realistic sweat and fabric movement.
+— Match-cut to 50mm lateral tracking shot. Smooth transitions between straight punches, slapping hands, elbow strikes, turning techniques, and compact leg attacks. Strong wooden recoil and realistic impact feedback.
+— Close-up orbit shot on focused eyes and breathing. Hands flow continuously between offense and defense. Sunlight catches sweat on the face while strikes create subtle vibration through the wooden dummy.
+— Full-body 28mm push-in shot. Efficient footwork, chain punches, elbows, turning movements, coordinated kicks. Bamboo leaves rustle softly while dust reacts naturally to movement.
+— Extreme close-up handheld realism. Rapid arm transitions between blocks and strikes. One powerful straight punch lands heavily on the wooden dummy with realistic muscle tension and sleeve movement. Dust shakes loose from impact.
+— Smooth mirror reflection transition back to frontal medium shot. Continuous flowing Wing Chun combinations with calm precision. Hair and clothing react naturally during movement.
+— Final cinematic shot, slow push-in then static hold. The wooden dummy sways slightly after the final strike. Dust settles through sunlight. Bamboo movement slowly stops. The martial artist raises his eyes toward camera with calm confidence, holding a traditional Wing Chun stance in silence.
+Sound design: fabric friction, realistic wooden impacts, air swishes, breathing, stone footwork, subtle ambient wind, bamboo rustling.
+15 seconds, cinematic pacing, grounded realism, highly detailed
+```
+
+**Why:** **焦段 token 示範**（`close 35mm follow shot`, `50mm lateral tracking`, `28mm push-in shot`, `Close-up orbit shot`）— 證明 Seedance 2.0 吃焦段。同時 `Sound design:` 一行整理音訊。`No anime, no CGI look, no digital painting` 排除清單。
+
+**Swap points:**
+- 武術：Wing Chun → 太極 / 巴西柔術 / 拳擊 / 劍道
+- 場景：日式庭院 → 香港天台 / 紐約地下室 / 沙漠
+- 鏡頭：35mm follow → 85mm portrait / 24mm wide
+
+---
+
+### S8. NBA 賽事轉播 + 觀眾席美女（英文）
+
+**Use case:** Sports broadcast、live event、引用 commentator dialogue
+**Target:** Seedance 2.0 pro，15s，16:9
+**Author:** UxUi Tega ([@Tegadesigns](https://x.com/Tegadesigns))
+
+```
+Cinematic live NBA broadcast style video, ESPN-style 16:9, ultra realistic courtside camera shot during Knicks vs 76ers Eastern Conference Semi-Finals Game 3, packed arena, live crowd atmosphere, broadcast color grading, subtle motion blur, slight TV compression artifacts, realistic sports commentary in background.
+
+A beautiful blonde woman with loose wavy blonde hair, striking blue eyes, soft glamorous makeup, elegant white fitted top, sitting courtside naturally watching the game. She looks effortlessly beautiful, calm and classy, unaware the camera is focused on her.
+
+The camera slowly cuts to her from the live game broadcast, subtle natural movements, soft breathing, blinking naturally, slight smile forming. Slow cinematic zoom toward her face, detailed zoom on her beautiful blue eyes. The man sitting beside her notices her beauty and keeps admiring her, looking at her with subtle fascination.
+
+She gently turns her head, gives a soft elegant smile, then lightly adjusts her hair with a stylish feminine hair flick, smooth and natural, followed by a confident subtle smile. The crowd remains realistic and active in the background, players moving on court, fans cheering.
+
+Live NBA commentary continues:
+"Brunson pulls up from deep… and he knocks it down! The Knicks are absolutely on fire tonight. You can feel the energy inside the arena—New York leads the series 3-1, and they're looking to close this out in style here in Game 3."
+
+Extremely realistic, luxury aesthetic, natural beauty, viral social media quality, premium cinematic sports broadcast look.
+```
+
+**Why:** Sports broadcast 範本 — `ESPN-style 16:9` format anchor + `broadcast color grading, subtle motion blur, slight TV compression artifacts` 三件套 + quoted commentary（會生成口播）。
+
+**Swap points:**
+- 賽事：NBA → FIFA / IPL cricket / NFL / F1
+- 主角：courtside 美女 → 球星家屬 / 評論員 / 教練
+
+---
+
+### S9. 90 年代動漫魔王吃拉麵 15s（英文，dialogue + subtitle）
+
+**Use case:** 風格化 anime、quoted dialogue 雙語 subtitle、Slice of life
+**Target:** Seedance 2.0 pro，15s，9:16 vertical
+**Author:** PromptlyAI ([@PromptlyAI_YT](https://x.com/PromptlyAI_YT))
+
+```
+Create a 15-second anime-style video clip in 9:16 vertical format.
+
+Concept: The Demon Lord's Day Off
+A terrifying but exhausted Demon Lord takes a break from world domination to quietly eat ramen in a small Japanese ramen shop. Tone: cinematic, slightly funny, and emotionally grounded.
+
+Style:
+90s anime film style, fantasy slice-of-life, subtle gritty realism, moody lighting, slightly desaturated colors, warm ramen-shop highlights, expressive character acting, polished hand-drawn anime look, soft film grain.
+
+Character:
+Male Demon Lord with black horns, long dark hair, red eyes, dark armor, and a cape. He looks powerful but tired, intimidating yet relatable.
+
+Setting:
+A cozy ramen shop at night in Japan. Warm lantern light, wooden counter, rising steam, soft reflections, quiet customers, and a subtle rainy-night atmosphere.
+
+Audio:
+Natural Japanese dialogue, English subtitles only, soft ambient ramen shop sounds, and gentle emotional background music.
+
+Shots / Timing:
+
+[00–05s]
+Medium-wide shot. The Demon Lord enters or sits at the counter, exhausted. Steam drifts through the warm shop.
+Japanese: 「今日は世界を滅ぼさない。」
+Subtitle: "Today, I'm not destroying the world."
+
+[05–10s]
+Medium shot. A steaming bowl of ramen is placed in front of him. He visibly relaxes.
+Japanese: 「今日は休みだ。ラーメンを食べる。」
+Subtitle: "It's my day off. I'm eating ramen."
+
+[10–15s]
+Close-up. He takes a bite of ramen and finally looks at peace. End on a calm, composed shot with subtle humor.
+Japanese: 「世界征服は、また明日だ。」
+Subtitle: "Taking over the world can wait until tomorrow."
+
+Camera / Constraints:
+Use cinematic anime framing with medium-wide, medium, and close-up shots. Smooth motion, subtle push-ins, and strong atmosphere. Keep it simple, readable, and emotionally clear. No extra on-screen text besides English subtitles.
+```
+
+**Why:** **雙語對白範本** — 日文原文 + 英文 subtitle，Seedance 2.0 會 lip-sync 日文 + render 英文字幕。9:16 vertical 適合 TikTok / Reels。
+
+**Swap points:**
+- 角色：魔王 → 機器人 / 古代仙人 / 外星人
+- 場景：拉麵店 → 居酒屋 / 便利店 / 咖啡廳
+- 風格：90s anime → 京都 anim / Ghibli / 新海誠
+
+---
+
+### S10. 古代奇幻戰爭 IMAX 9:16（英文）
+
+**Use case:** Epic battle、IMAX 質感、9:16 vertical、Format anchor 重度使用
+**Target:** Seedance 2.0 pro，15s，9:16
+**Author:** Elara Noor ([@ElaraNoorAl8](https://x.com/ElaraNoorAl8))
+
+```
+Duration: 15 Seconds
+Style: Ancient Fantasy War • Dark Mythology • Cinematic Survival Epic
+Format: Vertical 9:16 • UHD 8K • IMAX Fantasy Camera • Dolby Atmos • Hyper Realism
+
+A hyper-realistic cinematic fantasy battle sequence inside a gigantic ancient temple hidden deep within a volcanic mountain during a violent eclipse storm. Lava rivers glow beneath cracked stone bridges. Massive chains hang from the ceiling. Ash and embers float through the air. Thunder shakes the mountain while giant fire torches flicker against black obsidian walls. Cinematic smoke, glowing particles, realistic destruction physics, intense motion blur, handheld IMAX camera movement, dramatic shadows, and ultra-detailed fantasy VFX create an epic dark mythology atmosphere.
+
+MAIN CHARACTER:
+A mysterious female warrior wearing black royal battle armor infused with glowing ancient runes, long flowing cape, emotionless warrior queen energy, master of sword combat and supernatural fire abilities.
+
+0–2 SEC:
+Camera flies through massive volcanic temple. Lava erupts below ancient stone bridges. Heavy footsteps echo. Close-up of glowing armored boots walking slowly across cracked obsidian floor.
+
+2–4 SEC:
+Battle erupts instantly. She unsheathes glowing ancient sword. Massive shockwave blasts enemies backward. IMAX whip-pan follows her spinning slash cutting through armored warriors.
+
+4–6 SEC:
+Close combat inside collapsing temple corridor. She performs brutal sword combinations mixed with supernatural fire magic.
+
+6–8 SEC:
+A giant armored executioner attacks with massive molten hammer. She slides beneath attack in ultra slow motion.
+
+8–10 SEC:
+Temple begins collapsing into lava abyss. Giant chains snap from ceiling. Fire storms swirl through chamber.
+
+10–12 SEC:
+Final enemy emerges — gigantic shadow king covered in molten armor. Epic duel sequence begins.
+
+12–14 SEC:
+The volcanic mountain explodes violently. She escapes by leaping from collapsing temple onto giant mythical black dragon emerging through smoke and fire.
+
+14–15 SEC:
+Dragon flies above erupting volcano while entire mountain collapses into flames below.
+```
+
+**Why:** **格式 anchor stacking** 範本 — `Format: Vertical 9:16 • UHD 8K • IMAX Fantasy Camera • Dolby Atmos` 一行塞 4 個 anchor，Seedance 2.0 都吃。7-shot 結構 ~2s each，極快剪。
+
+**Swap points:**
+- 場景：火山神殿 → 冰原城堡 / 海底遺跡 / 浮空島
+- 主角：女戰士 → 男劍客 / 機甲駕駛 / 龍騎士
+- 對手：影子王 → 古龍 / 機械神 / 不死法師
+
+---
+
+## Seedance 2.0 速查總結
+
+| 場景類型 | 用哪個 preset | 語言 |
+|---|---|---|
+| 純愛 / Romance | S1 | 中文 |
+| 高奢 / Fashion | S2 | 中文 |
+| 療癒 / Slow living | S3 | 中文 |
+| 武打 / 動漫對決 | S4 | 中文 |
+| MV / 音樂 | S5 | 中文（quoted lyrics）|
+| 賽車 / 動作 | S6 | 英文 |
+| 武術 / 焦段示範 | S7 | 英文 |
+| 體育轉播 | S8 | 英文 |
+| 雙語 dialogue / Anime | S9 | 英文（quoted 日文）|
+| 史詩戰爭 / IMAX | S10 | 英文 |
+
+**選擇規則：** 中國/亞洲文化主題 → 中文；西方/賽車/體育 → 英文。
