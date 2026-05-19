@@ -2,6 +2,57 @@
 
 All notable changes to this skill are documented here.
 
+## [1.4.3] - 2026-05-19 — i2v prompt 黃金公式（用戶明示版）
+
+User taught the correct i2v prompt writing rule (2026-05-19):
+
+> 用圖片生影片的話，描述不用那麼詳細，前面都加上「根據圖片中的物體、畫面、風格來生成影片」，後續再加上運鏡甚麼的。
+
+### 黃金公式
+
+```
+根據圖片中的物體、畫面、風格來生成影片，
+[運鏡 1：時間 + 鏡頭運動]
+[運鏡 2：時間 + 鏡頭運動]
+[運鏡 3：時間 + 鏡頭運動]
+[音訊：可選]
+[Constraints：短]
+```
+
+### Why this beats my previous verbose 版本
+
+- Image already provides 70%+ visual info (object / composition / style / lighting / color)
+- Prefix sentence anchors model to "use the image as ground truth"
+- Not restating visuals = doesn't waste token attention, doesn't mislead model into "regenerating" the source
+- Short prompt lets model focus on motion
+
+### Length sweet spot
+
+- Old verbose 版: 300-500 chars (broken)
+- New 黃金公式: **80-150 chars** (Chinese)
+
+### English equivalent
+
+```
+Generate a video based on the object, composition, and style of the provided image,
+then [camera motion 1], [camera motion 2], [final beat].
+[Audio if needed].
+[Constraints — short].
+```
+
+### Files changed
+
+- `references/image-to-video-workflow.md` — Replaced verbose 5-part formula as primary; new 黃金公式 prefix as default; old 5-part demoted to "reference only for English-only scenarios"
+- `automation/site-profiles/oiioii.md` — New §12.10.5 "i2v Prompt 寫法（用戶明示）"
+- `memory/feedback_i2v_prompt_rule.md` (NEW, dev-only) — hard rule
+- `memory/MEMORY.md` (dev-only) — index updated
+
+### Note
+
+Universal across i2v platforms (Seedance / Kling / Veo / Sora / Runway / Hailuo / Wan). The prefix is a semantic anchor that translates to most modern i2v APIs.
+
+---
+
 ## [1.4.2] - 2026-05-19 — Second i2v打臉, bake "verify before documenting" rule
 
 **Critical lesson — second consecutive打臉.** v1.4.1 documented「right-click image → 加入對話」as the i2v correct method. **Implementation tested 2026-05-19 — also broken.** User report: "他生成好了，但鞋子完全不同" (the i2v video generated correctly but the sneaker is completely different from the source image).

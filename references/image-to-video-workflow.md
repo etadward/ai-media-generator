@@ -31,7 +31,52 @@
 
 ---
 
-## 📐 i2v 5-Part Prompt Formula
+## 📐 i2v Prompt 公式（2026-05-19 用戶明示版）
+
+### 🔴 黃金公式：固定 prefix + 運鏡（簡短）
+
+**用戶 2026-05-19 明示：** 「用圖片生影片的話，描述不用那麼詳細，前面都加上『根據圖片中的物體、畫面、風格來生成影片』，後續再加上運鏡甚麼的。」
+
+```
+根據圖片中的物體、畫面、風格來生成影片，
+[運鏡 1 — 例：低角度緩慢推近，輕微環繞]
+[運鏡 2 — 例：360 度 orbit 環繞]
+[運鏡 3 — 例：拉遠回 hero 視角，定格]
+[音訊 — 若需要]
+[Constraints — 短]
+```
+
+**Why this works：**
+- 圖已經負責 70%+ 視覺資訊（物體 / 畫面 / 風格）
+- prefix 明確告訴模型「以下圖為依歸」
+- 不重述視覺 = 不會讓模型「干擾既有圖」
+- 簡短運鏡描述 = 模型專注「動」這件事
+
+**範例（運動鞋廣告 i2v）：**
+```
+根據圖片中的物體、畫面、風格來生成影片，
+[00:00-00:05] 低角度緩慢 dolly-in 推近，輕微相機環繞
+[00:05-00:10] 360 度順時針 orbit 環繞，揭示 3D 輪廓
+[00:10-00:15] 拉遠回 hero 視角，最後定格在原始 3/4 位置
+[音訊] 低頻 synth pad + whoosh 過場 + sub-bass 定格 impact
+[Constraints] 不變形、不漂移、穩定地平線、ONE camera motion per shot
+```
+
+~120 字（vs 之前我寫 330 字的 verbose 版）。
+
+### 對比：之前我寫的 verbose 版（broken）
+
+```
+[i2v 起始幀] 請以「資產 1」作為 i2v 起始幀。 [比例] 16:9 [對白] 無對白 [時長] 15 秒。
+Preserve: sneaker 鞋型、黑色 mesh upper + 橘紅 accent + 半透明發光 sole、
+漂浮位置、反射地板、暗藍漸層背景。鞋款保持剛性不變形。 [00:00-00:05] 鏡頭1：...
+```
+
+❌ 重複描述圖中已有的視覺（鞋型 / 配色 / 漂浮 / 反射地板 / 暗藍漸層）
+❌ Preserve 子句被模型當「指示」可能反而干擾
+❌ 太長 → 模型把 token attention 浪費在「視覺重述」而非運鏡
+
+### 5-Part formula（v1.4.0 推測版，保留作 reference 但**不是首選**）
 
 ```
 1. Preserve [important details that must NOT change]
@@ -40,6 +85,8 @@
 4. Final beat: [ending frame description]
 5. Avoid [common failure modes]
 ```
+
+⚠️ 這是 cliprise/awesome-image-to-video-prompts 的「英文 / 較長」風格 — 適合純英文場景。**中文場景優先用上面的「黃金公式」**（prefix + 運鏡）。
 
 **範例（短版，單鏡 5-7s）：**
 

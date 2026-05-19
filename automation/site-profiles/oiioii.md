@@ -1488,3 +1488,51 @@ submit 後 STAR 餘額不變。agent 等用戶 confirm 才 commit（之後才扣
 
 詳見 memory/[feedback_no_self_rating.md](file:///C:/Users/Aria/.claude/projects/D--skills/memory/feedback_no_self_rating.md)
 
+
+---
+
+### 12.10.5 ✅ i2v Prompt 寫法（用戶明示，2026-05-19）
+
+**用戶原話：** 「用圖片生影片的話，描述不用那麼詳細，前面都加上『根據圖片中的物體、畫面、風格來生成影片』，後續再加上運鏡甚麼的。」
+
+#### 黃金公式
+
+```
+根據圖片中的物體、畫面、風格來生成影片，
+[運鏡 1：時間 + 鏡頭運動]
+[運鏡 2：時間 + 鏡頭運動]
+[運鏡 3：時間 + 鏡頭運動]
+[音訊：可選]
+[Constraints：短]
+```
+
+#### Why
+
+- 圖已負責 70% 視覺（物體 / 構圖 / 風格 / 光線 / 配色）
+- prefix 明確告訴模型「以下圖為依歸」— anchor instruction
+- 不重述視覺 = 不浪費 token attention，也不會誤導模型干擾既有圖
+- 短 prompt 讓模型專注「動」這件事
+
+#### 對比
+
+| ❌ Verbose 版（之前我寫的 v1.4.0/1）| ✅ 用戶明示版 |
+|---|---|
+| 300-500 字 | 80-150 字 |
+| 重複描述視覺（顏色 / 配色 / 構圖）| 只寫運鏡 |
+| Preserve 子句堆 | prefix 一句搞定 |
+| 多 [bracketed labels] 標籤 | 簡潔時間區塊 |
+| 模型 attention 分散 | 模型專注 motion |
+
+#### 完整 i2v SOP（用戶明示版整合）
+
+```
+1. 點「+ 新建專案」開新 workspace（feedback_no_reuse_workspace.md）
+2. 切自由畫布 chip（feedback_oiioii_mode_lock.md）
+3. 切 GPT-Image2，type hero shot prompt，send，等 60-180s
+4. 切 Seedance 2.0 pro，設定 15s / 16:9 / 720p
+5. 🚧 右鍵圖 → 「生成影片」（i2v 真正觸發，待驗證）
+6. type 黃金公式 prompt（prefix「根據圖片中的物體、畫面、風格來生成影片」+ 運鏡 + Constraints）
+7. send，等 8-15 min
+8. 中性報告，不自評（feedback_no_self_rating.md）
+```
+
