@@ -342,28 +342,60 @@ Magazine-spread layout, paper texture, subtle drop shadows between tiles.
 
 ---
 
-## 🆕 OiiOii 自由畫布 i2v 特殊技巧（2026-05-19 實戰學到）
+## 🆕 OiiOii 自由畫布 i2v 探索進度（2026-05-19，兩次失敗）
 
-### 1. 🔴 **正解：右鍵 image → 加入對話**（2026-05-19 用戶明示）
+### ⛔ 兩個流程都實測 broken — 真正 i2v 操作仍待驗證
 
-OiiOii canvas 上的圖片，**右鍵點擊會出現「加入對話」選項** — 這才是把圖片設為 i2v reference 的**正確操作**。
+| 版本 | 我寫的「正解」 | 實測結果 |
+|---|---|---|
+| **v1.4.0** | prompt 內提「資產 N」讓 agent 自動關聯 | ❌ 鞋子造型歪、走 t2v 路徑 |
+| **v1.4.1** | 右鍵圖 → **加入對話** | ❌ 「鞋子完全不同」（用戶 2026-05-19 報告）|
 
-⛔ **不要用「資產 N」prompt 引用法** — 那是 v1.4.0 我寫錯的，模型不會真的把圖當 i2v 起始幀，造型會歪、運鏡會走 t2v 邏輯失去 image-anchor，廣告質感全失。
+兩次都把「以為」當「正解」寫進 skill，兩次都被打臉。共燒 ~420 STAR ≈ NT$100。
 
-**正確 SOP：**
+### 🔍 失敗原因推測
+
+**「加入對話」可能只是把圖加進 LLM agent 的 chat history**（讓藝術總監知道你想做球鞋廣告），**沒真的把圖檔注入 Seedance 的 i2v API endpoint**。
+
+藝術總監看到圖 → 理解 user intent → 寫 prompt 給 Seedance → 但 Seedance 收到的仍是純文字 → 走 t2v 生成 → 鞋子當然不一樣。
+
+### 🎯 待驗證的真正 i2v 觸發點
+
+回看 canvas 右鍵 context menu 7 個選項：
+
+| 選項 | 推測用途 | 驗證狀態 |
+|---|---|---|
+| **✏️ 生成影片** | **真正的 i2v 直接觸發**（最大嫌疑）| ⏳ 未測 |
+| 🖼 生成圖片 | i2i 模式 | ⏳ 未測 |
+| 反推提示詞（4 STAR）| Image → prompt 反推 | ⏳ 未測 |
+| 💬 加入對話 | 只丟給 agent 看，**不鎖 i2v** | ❌ 已測，broken |
+| 複製 (Ctrl+C) | 標準 | — |
+| 下載 | 標準 | — |
+| 刪除 | 標準 | — |
+
+**下次嘗試：先試「✏️ 生成影片」option** — 應該會直接開 i2v 工具列，設參數後送。預期它會真正把圖檔當起始幀。
+
+### 待驗證的其他可能機制（如果「生成影片」也失敗）
+
+1. **拖拉圖到 prompt input** — 之前 drag 是 pan canvas，但可能還有其他 drop zone
+2. **+ 按鈕 → 選擇圖片** + 從本地上傳 — 強制走 file upload 路徑，可能才能真 attach
+3. **點圖選中 → 出現 floating action bar** — 還沒探索過
+4. **canvas 上 frame 的「+ 替換」icon** — 可能是替換 ref slot 而非當前圖
+5. **不切換到 Seedance 2.0 pro，保留 智能模型** — 讓 agent 自己決定 i2v
+6. **canvas 上拉一條線從圖到 prompt area** — node-graph 風格的關聯（OiiOii canvas 是 tldraw 風）
+
+### 📌 教訓（baked 進 memory）
+
+寫進 `feedback_verify_before_documenting.md`：**未實測完整 UI options 不要把「以為」寫成 SOP**。每個 context menu / 按鈕 / 操作要實際走一遍，看 model 真實輸出，才能寫進 skill。否則就是「自吹自擂式 v1.x.0 → 打臉 → v1.x.1 → 再打臉」的循環。
+
+### 暫時 SOP（保守版，待真正 i2v 驗證後更新）
+
 ```
 1. 生 hero 圖（GPT-Image2 / Nano Banana 等）
-2. 切到影片模型（Seedance 2.0 pro 等）
-3. 右鍵 canvas 上的 hero 圖 → 選「加入對話」
-4. 圖會作為 i2v reference attach 到 prompt 區（看到 thumbnail）
-5. type prompt（5-part formula：Preserve / Camera / Motion / Final / Avoid）
-6. send
+2. 確認生成滿意（如果不滿意先 redo image，再考慮 i2v）
+3. 🚧 i2v 觸發方式待驗證：右鍵 → 「生成影片」是最有可能的真正觸發點
+4. 不要再相信「加入對話」這個選項作為 i2v 機制
 ```
-
-**為什麼 prompt 引用法失敗：**
-- 藝術總監 agent 看到「資產 1」字串可能會語義關聯到對應 asset，但**不會真的把圖檔送進 Seedance i2v API endpoint**
-- 模型仍走 t2v 路徑生成，所以「圖中的具體造型 / 細節」會 hallucinate 變形
-- Constraint「shape unchanged」沒有實際 image-anchor 可比對，淪為空話
 
 ### 2. canvas 上的 frame 可被 drag-move（會破壞 layout）
 

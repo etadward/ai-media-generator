@@ -2,6 +2,44 @@
 
 All notable changes to this skill are documented here.
 
+## [1.4.2] - 2026-05-19 — Second i2v打臉, bake "verify before documenting" rule
+
+**Critical lesson — second consecutive打臉.** v1.4.1 documented「right-click image → 加入對話」as the i2v correct method. **Implementation tested 2026-05-19 — also broken.** User report: "他生成好了，但鞋子完全不同" (the i2v video generated correctly but the sneaker is completely different from the source image).
+
+### Two failed approaches now documented as broken
+
+| Version | Claimed "correct" | Actual result |
+|---|---|---|
+| v1.4.0 | prompt 內提「資產 N」 | ❌ Sneaker shape distorted, t2v fallback |
+| v1.4.1 | 右鍵 image → 加入對話 | ❌ "Sneaker completely different" (true t2v) |
+
+Total wasted: ~420 STAR ≈ NT$100 across both attempts.
+
+### Why「加入對話」also failed (推測)
+
+「加入對話」likely just adds the image to the LLM agent (藝術總監) chat history — the agent reads the image semantically and writes a text prompt for Seedance, but **the image file itself is NOT injected into Seedance's i2v API endpoint**. So Seedance runs as pure t2v, generating a different sneaker that matches the text description but not the source visual.
+
+### Most likely real i2v trigger (待驗證)
+
+Canvas right-click context menu has 7 options. The first one is **「✏️ 生成影片」**, which is most likely the actual direct-i2v trigger that injects the image file into Seedance's API. Not yet tested — pending user permission for another 210 STAR test.
+
+### New hard rule baked
+
+`memory/feedback_verify_before_documenting.md` — never write SOP based on "what I think works." Must exhaustively try every candidate UI operation, verify model's actual output matches expected behavior, before committing to skill docs.
+
+### Files changed
+
+- `references/image-to-video-workflow.md` — added "two failures" warning, listed 7 right-click options with verification status, suggested next test is 「生成影片」 option
+- `automation/site-profiles/oiioii.md` — §12.10.4 documents second 打臉; old §12.10.3 demoted to "broken SOP (reference only)"
+- `memory/feedback_verify_before_documenting.md` (NEW, dev-only) — hard rule
+- `memory/MEMORY.md` (dev-only) — index updated
+
+### Lesson cost
+
+Two failed i2v attempts cost user ~NT$100 and ~26 min of wait time. The verify-first rule, if baked earlier, would have saved both.
+
+---
+
 ## [1.4.1] - 2026-05-19 — i2v correction + ban self-rating
 
 Hard correction to v1.4.0. User feedback: my sneaker i2v output was bad (shape distorted, motion uncinematic) but I claimed "9/10" — self-praise while shipping broken work.
