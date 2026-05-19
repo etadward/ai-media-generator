@@ -2,6 +2,52 @@
 
 All notable changes to this skill are documented here.
 
+## [1.4.0] - 2026-05-19 — Image-to-Video (i2v) workflow + GPT-Image2 integration
+
+### New file
+
+- **`references/image-to-video-workflow.md`** — Complete i2v workflow guide (500+ lines), covering:
+  - **Core principle**: "i2v = motion prompting" — image gives subject/composition/lighting/style; prompt focuses on motion/camera/timing/stability only. Don't restate visuals.
+  - **5-part i2v prompt formula**: Preserve / Camera / Motion / Final beat / Avoid
+  - **5 source image types**: Hero shot / Storyboard / Concept board / Character sheet / Mood board — each with GPT-Image2 prompt template + corresponding i2v approach
+  - **Per-platform i2v signatures**: Seedance 2.0 pro / Kling 3.0 / Veo 3.1 (JSON i2v) / Sora 2 / Runway Gen-4 / Hailuo / Wan 2.6
+  - **15-point source image preparation checklist**
+  - **Strong vs risky use cases**
+  - **Complete 9-batch OiiOii i2v SOP** (5-batch image + 4-batch video)
+  - **Cost breakdown**: 7 STAR (image) + 210 STAR (video) = 217 STAR ≈ NT$52 for 15s ad
+  - **i2v vs t2v decision tree**
+
+### New skill behaviors learned (2026-05-19 OiiOii sneaker ad session)
+
+1. **「資產 N」prompt 引用 = i2v reference** — In OiiOii free canvas, simply mentioning "資產 1" in the video prompt triggers the agent to auto-link the corresponding GPT-Image2 asset as the i2v starting frame. No drag-and-drop, no file upload needed.
+
+2. **OiiOii canvas shows visual i2v lineage** — A dashed line connects source image to i2v output on the canvas, making lineage explicit.
+
+3. **OiiOii has hidden i2v popup toolbar** — Once an i2v relationship is established, a dedicated popup appears (bottom-right) showing source image thumbnail + prompt + model settings. This is the "real" i2v UI.
+
+4. **Drag from canvas frame to prompt input = panning canvas** — Don't try drag-and-drop; it pans the canvas and may move the frame off-screen.
+
+5. **`+` button on prompt input = local file upload only** — Not for referencing canvas assets.
+
+### Source attribution
+
+- [`cliprise/awesome-image-to-video-prompts`](https://github.com/cliprise/awesome-image-to-video-prompts) — i2v core principles + 5-part formula + source image checklist
+- [`underwoodxie/promptsref-gpt-image-prompts`](https://github.com/underwoodxie/promptsref-gpt-image-prompts) — GPT-Image2 prompt patterns
+- [`cliprise/awesome-ai-product-photography-prompts`](https://github.com/cliprise/awesome-ai-product-photography-prompts) — product photography patterns
+
+### Real-world validation
+
+OiiOii sneaker ad session (2026-05-19):
+- GPT-Image2 hero shot (Nike-style sneaker, levitating, neon orange + black mesh + obsidian floor): perfect render at 7 STAR
+- Seedance 2.0 pro i2v (slow dolly + 360 orbit + pull-back to hero): shape preserved, color preserved, motion clean at 210 STAR
+- Total cost: 217 STAR ≈ NT$52 — only NT$2 premium over pure t2v, but adds: client approval gate + shape consistency + N-variants from 1 image
+
+### Files changed
+
+- `references/image-to-video-workflow.md` — +500 lines (NEW)
+
+---
+
 ## [1.3.0] - 2026-05-19 — Cross-platform open-source prompt intake (8 repos researched)
 
 Major content expansion. Researched 8 high-star open-source prompt repos on GitHub and integrated key patterns into the skill.
