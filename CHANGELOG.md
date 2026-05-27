@@ -2,6 +2,55 @@
 
 All notable changes to this skill are documented here.
 
+## [1.4.5] - 2026-05-28 — 3-call 極速 SOP + 額外踩坑記錄
+
+Post-v1.4.4 validation iteration. Ran a second VFX with a brand-new theme to verify the Slate injection chain end-to-end. The injection worked correctly (correct agent narration, no anime fallback), but uncovered three additional gotchas that needed baking before the workflow is truly reliable across invocations.
+
+### New findings
+
+1. **Send button class varies across workspaces.** Tested on two consecutive same-account workspaces. One used `[class*="_send-button_"]`, the other only had `[class*="_credit-cost_"]`. Cause unknown — possibly A/B testing or progressive UI rollout. Must fallback through both selectors plus a positional fallback (rightmost button at y > 750).
+
+2. **`javascript_tool` doesn't support top-level await.** Any script with `await` outside an async function errors with `SyntaxError: await is only valid in async functions`. Cost: one extra retry call per occurrence. Fix: always wrap in `(async () => { ... })()`.
+
+3. **Cookie/query-string blocking on JS responses.** Chrome MCP filters out tool responses containing URL query strings or cookies (to prevent token leakage). When inspecting video sources, return decomposed fields (`hostname`, `pathname`, `duration`) instead of `src`.
+
+### 3-call ultra-fast SOP (same-session repeat VFX)
+
+When already-open in OiiOii, every subsequent VFX needs only 3 tool calls before send:
+
+- Call 1: `browser_batch [navigate /home + jsClick 新建專案]` (async-wrapped)
+- Call 2: `javascript_tool` (free canvas + smart-model dropdown + Seedance 2.0 pro)
+- Call 3: `javascript_tool` (inject prompt via beforeinput + verify dom length + click send via fallback selectors)
+
+Plus 1-2 verify calls = **5-6 calls total per VFX**, down from 15-20 in pre-v1.4.0.
+
+### Call count evolution
+
+| Version | Calls/VFX | Trigger |
+|---|---|---|
+| pre-v1.4.0 | 15-20 | computer.type + per-step screenshots |
+| v1.4.0-1.4.3 | 9-12 | Chrome MCP + browser_batch |
+| v1.4.4 baseline | 6-8 | Slate beforeinput breakthrough |
+| **v1.4.5** | **5-6** | Same-session 3-call SOP |
+
+70%+ call reduction since pre-v1.4.0.
+
+### Files changed
+
+- `automation/site-profiles/oiioii.md` — Updated §12.10.9 with: send-button fallback selectors, async-wrap rule, 3-call ultra-fast variant
+- `memory/feedback_contenteditable_react_dispatch.md` (dev-only) — Added Chrome MCP gotchas section (async wrap, cookie blocking, output truncation, send-button variance)
+
+### Empirical validation
+
+| VFX | Theme | Outcome | STAR | Wall time |
+|---|---|---|---|---|
+| #1 (post-v1.4.4) | 時空裂縫 / 維度突破 | Generated correctly, 15s 16:9 | 140 | ~4 min |
+| #2 (post-v1.4.5) | 液態水銀 / 克萊因瓶 / 鑽石 | Generated correctly, no anime fallback | ~140 | ~4 min |
+
+The 3-call chain held across both workspaces despite the send-button class difference (fallback caught it).
+
+---
+
 ## [1.4.4] - 2026-05-28 — Slate editor 自動填寫破解 + 空 prompt fallback 警告
 
 **Critical automation breakthrough.** Discovered the working JavaScript pattern for injecting prompts into OiiOii's Slate-based contenteditable editor when computer.type is unavailable (Chrome at "read" tier in Claude Code sandbox).

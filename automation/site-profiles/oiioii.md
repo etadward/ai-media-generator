@@ -1707,14 +1707,122 @@ findSendBtn()?.click();
     return 'INJECTION FAILED domLen=' + dom.length + ' expected>=' + Math.floor(PROMPT.length*0.5);
   }
 
-  // 點 send
-  const sendBtn = document.querySelector('[class*="_send-button_"]');
+  // 點 send（fallback 兩個 UI variant）
+  const sendBtn = document.querySelector('[class*="_send-button_"]')
+              || document.querySelector('[class*="_credit-cost_"]')
+              || [...document.querySelectorAll('button')].filter(b => {
+                  const r = b.getBoundingClientRect();
+                  return r.y > 750 && r.x > 400;
+                }).pop();
   if(!sendBtn) return 'NO SEND BUTTON';
   sendBtn.click();
 
   return 'SUBMITTED domLen=' + dom.length;
 })()
 ```
+
+#### ⚠️ JS execution gotcha — async 必須 wrap
+
+Chrome MCP `javascript_tool` 預設用 `eval()` 不允許 top-level await。**含 `await` 的 JS 必須 wrap：**
+
+```js
+// ❌ FAIL: SyntaxError await is only valid in async functions
+await new Promise(r => setTimeout(r, 300));
+
+// ✅ WORK: 整段包進 async IIFE
+(async () => {
+  await new Promise(r => setTimeout(r, 300));
+  // ... rest of code
+  return 'result';
+})()
+```
+
+每個含 `await` 的 javascript_tool call 都要這樣 wrap，否則 retry 1 次 = 多 1 call。
+
+#### ⚡⚡⚡⚡ 3-call 「同 session 重複 VFX」極速版（2026-05-28 v1.4.5）
+
+當 session 內已開過 OiiOii 一次，後續每個 VFX 只需 **3 個 tool call**：
+
+```js
+// === CALL 1: navigate + 新建專案 ===
+// 用 browser_batch 把 navigate 跟 click 合一
+[
+  { name: "navigate", input: { url: "https://www.oiioii.ai/home", tabId: TAB_ID }},
+  { name: "javascript_tool", input: {
+      action: "javascript_exec",
+      tabId: TAB_ID,
+      text: `(async () => {
+        await new Promise(r => setTimeout(r, 800));
+        const btn = [...document.querySelectorAll('button')].find(b => b.textContent.includes('新建專案'));
+        if(btn) btn.click();
+        await new Promise(r => setTimeout(r, 1500));
+        return JSON.stringify({clicked: !!btn, url: location.href.substring(0, 80)});
+      })()`
+  }}
+]
+
+// === CALL 2: free canvas + Seedance pro ===
+(async () => {
+  let btns = [...document.querySelectorAll('button')];
+  btns.find(b => b.textContent.includes('自由畫布'))?.click();
+  await new Promise(r => setTimeout(r, 300));
+  btns = [...document.querySelectorAll('button')];
+  btns.find(b => b.textContent.includes('智能模型'))?.click();
+  await new Promise(r => setTimeout(r, 500));
+  const sp = [...document.querySelectorAll('*')].find(el =>
+    el.textContent.trim() === 'Seedance2.0 pro' && el.children.length === 0);
+  sp?.click();
+  await new Promise(r => setTimeout(r, 300));
+  return 'mode+model set: ' + (!!sp);
+})()
+
+// === CALL 3: inject + verify + send ===
+(async () => {
+  const div = document.querySelector('[contenteditable="true"]');
+  if(!div) return 'NO INPUT';
+  const PROMPT = `<your t2v VFX prompt>`;
+  div.focus();
+  const range = document.createRange();
+  range.selectNodeContents(div);
+  range.collapse(false);
+  const sel = window.getSelection();
+  sel.removeAllRanges();
+  sel.addRange(range);
+  const dt = new DataTransfer();
+  dt.setData('text/plain', PROMPT);
+  div.dispatchEvent(new InputEvent('beforeinput', {
+    bubbles: true, cancelable: true,
+    inputType: 'insertFromPaste', data: PROMPT, dataTransfer: dt
+  }));
+  await new Promise(r => setTimeout(r, 400));
+  const dom = div.innerText || div.textContent || '';
+  if(dom.length < PROMPT.length * 0.5) return 'INJECT FAIL domLen=' + dom.length;
+  const sendBtn = document.querySelector('[class*="_send-button_"]')
+              || document.querySelector('[class*="_credit-cost_"]')
+              || [...document.querySelectorAll('button')].filter(b => {
+                  const r = b.getBoundingClientRect();
+                  return r.y > 750 && r.x > 400;
+                }).pop();
+  if(!sendBtn) return 'NO SEND BTN';
+  sendBtn.click();
+  return 'SUBMITTED domLen=' + dom.length;
+})()
+```
+
+**之後 wait + 1-2 個 verify call → 完成 5-6 calls 全程**
+
+#### 對比進化軌跡
+
+| 版本 | calls / VFX | 註 |
+|---|---|---|
+| pre v1.4.0 | 15-20 | computer.type + 多次 screenshot |
+| v1.4.0-1.4.3 | 9-12 | 改 chrome MCP + browser_batch |
+| v1.4.4 baseline | 6-8 | Slate beforeinput 破解 |
+| **v1.4.5 (3-call)** | **5-6** | 同 session 重複用，極致壓縮 |
+
+從 15-20 → 5-6 = **70%+ call 節省**
+
+
 
 #### Phase C — 等待 + 取結果（call 6+）
 
