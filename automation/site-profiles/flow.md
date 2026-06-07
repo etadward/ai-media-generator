@@ -1,9 +1,69 @@
-# Site Profile: Google Flow (Veo 3.1)
+# Site Profile: Google Flow (Veo 3.1 + Gemini Omni)
 
 **URL:** `https://labs.google/fx/tools/flow` (會重導至 `/zh/tools/flow` 或地區別)
-**驗證狀態:** ✅ 2026-04-19 實測
-**平台類型:** Google AI 電影製作平台 (Veo 3.1 官方 UI)
-**Stack:** Next.js React，ref 相對穩定但 **prompt textbox 是 contentEditable DIV** (一樣 form_input 不吃)
+**驗證狀態:** ✅ 2026-04-19 實測（Veo 操作流程）；🆕 2026-06-08 大改版知識（WebSearch 官方+社群多源研究，UI 操作待登入後實機驗證）
+**平台類型:** Google AI 創作工作室（已從「電影工具」升級為 AI Creative Studio）
+**Stack:** Next.js React，prompt textbox 是 contentEditable DIV (form_input 不吃，比照 OiiOii 用 beforeinput 注入)
+
+> ⚠️ **2026-06-08 登入狀態：Flow session 會過期，重進需 Google 帳號選擇 + OAuth 同意。** 登入/授權是安全紅線（Claude 不代做），需用戶親自完成帳號選擇後才能自動化操作。
+
+---
+
+## 0. 🆕🆕 2026 大改版完整地圖（WebSearch 研究，2026-06-08）
+
+### 改版時間軸
+| 日期 | 改版 |
+|---|---|
+| 2026-01-13 | Veo 3.1 更新：更強音訊/prompt 遵從/寫實；**4K 升頻**；音訊帶進 Ingredients/Frames/Extend |
+| **2026-02-25** | **三工具合一**：Flow + Whisk + ImageFX 併成單一介面；**Nano Banana** 成 Flow 內建生圖引擎（直接當 ingredients/frames）|
+| 2026-04-30 | Whisk 永久關閉（未遷移者資產刪除）|
+| **2026-05-19** | **Google I/O 2026**：Flow 升級「AI Creative Studio」；上 **Gemini Omni / Omni Flash**、**Flow Agent**、**Flow Tools**、**Flow Music (Lyria 3 Pro)**、**Flow TV**；**AI Ultra 降價 $250→$100**，新增雙層 |
+
+### 核心功能地圖（功能｜作用｜操作）
+| 功能 | 作用 | 操作要點 |
+|---|---|---|
+| **Text to Video** | 純文字生影片 | model 下拉選 → Video mode → 4/6/8s（10s 限 Omni）|
+| **Frames to Video** | 首/尾幀框構圖 + 轉場 + 動畫化靜圖 | 拖圖到 +Add start frame / +Add end frame → prompt 寫兩幀間動作 |
+| **Ingredients to Video** ⭐ | 餵參考（角色/物件/風格/產品）鎖跨鏡一致 = **Flow 版鎖形狀**，比 OiiOii i2v 更強 | 拖資產進 prompt box，**最多 3 個**；產品放純色/去背背景 |
+| **Extend** | 延長 clip 保一致 | **僅 Veo 生成的影片**；extended clip 不能再套其他編輯 |
+| **Scene Builder** | 多 clip 排序剪輯台 | clip「More→Add to Scene」→ 拖曳排序 + 修剪 → 預覽下載；**Jump To**=換場景保外觀 |
+| **Camera Controls** | 運鏡（angles/dolly/zoom/tracking）| 透過 prompt 鏡頭語彙下達 |
+| **Flow Agent** 🆕 | AI 創作夥伴：brainstorm/劇情建議/批次編輯/整理 collections | 影片拖進 prompt box 描述要改什麼，存進 asset stack 不丟原檔 |
+| **Flow Tools** 🆕 | 自然語言「vibe code」自製工具（影片 resizer / 特效產生器）| Flow 內描述需求即建 |
+| **Flow Music (Lyria 3 Pro)** 🆕 | AI 音樂，可單獨改某段/生替代版/翻譯歌詞 | 對 agent 用講的導演音樂影片 |
+| **Flow TV** 🆕 | 精選 clip 展示牆，**每支公開顯示確切 prompt** = 學 prompt 神器 | labs.google/flow/tv，免訂閱 |
+| **生圖引擎** | Flow 內生圖 | Nano Banana 2（預設免費）/ Nano Banana Pro（Ultra）/ Imagen 4 |
+
+### 🎯 Gemini Omni Flash in Flow（殺手鐧 = 對話式編輯）
+- **切換：** 設定面板把 video model 切「Gemini Omni Flash」（需 AI Plus/Pro/Ultra；**免費額度只能跑 Veo 3.1**）。
+- **Omni 獨家：** 10s clip（Veo 只 4/6/8s）、**Video-to-Video 編輯**、自訂語音、進階角色 reference。
+- **對話式編輯流程：** model 設 Omni → 生成 base scene → **在同一 chat 接著講「換背景 / 改機位 / 套 cinematic zoom」** → 它只改不重跑 → **最多 3 輪 refine**。Edit & Refine 可上傳影片（最長 60s，剪到 30s 上限，選最多 10s 片段編輯）。
+- **這原生解掉 OiiOii「加入對話≠i2v」的坑** —— Omni 的 reference 鎖造型 + 對話改場景是設計核心。
+
+### Omni vs Veo 3.1 選型（Flow 內）
+| 要 | 選 |
+|---|---|
+| 10s / 影片改影片 / 自訂語音 / 對話式迭代改 | **Gemini Omni Flash** |
+| 4K 成品 / 純 t2v / 省 credit / 免費跑 / 拼長片 Extend | **Veo 3.1** |
+
+### 訂閱 + credits（I/O 2026 後，數字待實機確認）
+| 層 | 月費 | credits/月 | Omni Flash |
+|---|---|---|---|
+| Free | $0 | 少量 | ❌（只 Veo 3.1）|
+| AI Plus | $7.99 | 200 | ✅ |
+| AI Pro | $19.99 | 1,000 | ✅（Hao 持有）|
+| AI Ultra | $100 | 10,000 | ✅ + 4K + Nano Banana Pro |
+| AI Ultra 高 | $200 | 25,000 | ✅ 全含 |
+- 原生 720p；1080p 升頻 Free/Pro 免費；4K 升頻約 50cr (待驗證)。Omni Flash 各時長 credit (15/20/25/30、edit 40) 為第三方數字**待 Flow 介面確認**。
+
+### Flow 社群 prompt 技巧（X/Reddit/YouTube/官方彙整）
+1. **Camera-first**：每個 prompt **開頭先寫鏡頭**（連「static, locked off」也要寫）—— 鏡頭定整支視覺文法。
+2. **五要素 + 50-60 字**：Subject&Action / Composition&Camera / Environment&Mood（寫畫面感不只寫地點）/ Visual Style（具體如 stop motion）/ Audio。
+3. **`@AssetName` 引用**：打 `@` 接已建資產名引用角色/物件（同 Seedance 概念），保跨鏡一致。
+4. **跨鏡一致咒語**：明確叫 Gemini「**repeat all essential details from prior prompts**」複述前鏡關鍵細節。
+5. **音訊當 sound designer**：別寫「cinematic score」，寫「a single low cello note building over 5s then cut to silence」。
+6. **多輪 surgical 編輯**：每次編輯帶 **preserve 指令** 保留其他部分，把每次生成當草稿逐步改（Omni 原生支援）。
+7. ⚠️ **t2v 要寫足視覺細節**（與 OiiOii i2v「不重述視覺」相反 —— 平台差異，分開記！Frames/Ingredients 模式才回到「視覺交給參考圖、prompt 重心運鏡」）。
 
 ---
 

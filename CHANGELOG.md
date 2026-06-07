@@ -2,6 +2,25 @@
 
 All notable changes to this skill are documented here.
 
+## [1.6.1] - 2026-06-08 — Google Flow 2026 大改版完整訓練
+
+User: "go online and keep strengthening, operate the platforms especially Flow — it had a major revamp — train extensively, learn Flow usage from X / IG / Threads / Reddit." Researched Flow's 2026 overhaul across official + community sources (1 dedicated research subagent + inline WebSearch) and baked a comprehensive revamp map into the Flow site-profile.
+
+### Flow revamp captured (`automation/site-profiles/flow.md` §0, new)
+
+- **Timeline:** 2026-01-13 Veo 3.1 update (4K upscale, audio into Ingredients/Frames/Extend) → 2026-02-25 three-tool merge (Flow + Whisk + ImageFX into one UI, Nano Banana as built-in image engine) → 2026-04-30 Whisk shutdown → 2026-05-19 I/O 2026 (Flow becomes "AI Creative Studio": Gemini Omni Flash, Flow Agent, Flow Tools, Flow Music/Lyria 3 Pro, Flow TV; AI Ultra price cut $250→$100).
+- **Feature map:** Text/Frames/Ingredients-to-Video, Extend, Scene Builder (+ Jump To), Camera Controls, Flow Agent, Flow Tools, Flow Music, Flow TV, in-workspace image engines.
+- **Gemini Omni Flash in Flow** = the killer conversational-editing flow: generate base → keep talking in the same chat ("change background / camera / apply cinematic zoom") → it edits without re-running → up to 3 refine turns. 10s clips, video-to-video editing, custom voices. This natively solves the OiiOii "加入對話 ≠ i2v" pain.
+- **Omni vs Veo 3.1 selection table**, subscription/credits table (Hao has AI Pro), and 7 community prompt techniques: camera-first, 5-element/50-60 words, `@AssetName` reference (same concept as Seedance), "repeat all essential details from prior prompts" consistency spell, audio-as-sound-designer, multi-turn surgical editing with preserve instruction, and the platform-difference warning (Flow t2v wants full visual detail — opposite of OiiOii i2v's "don't restate visuals").
+
+### Honest limitations (per verify-before-documenting)
+
+- **Live Flow operation is blocked:** Flow's session expired; re-entry needs Google account selection + OAuth consent, which is an authentication action Claude does not perform. The UI map is from official Help docs + community research and is flagged "待登入後實機驗證" — not live-verified this session.
+- **Reddit / Instagram / Threads** are not directly crawlable by the web tool (Reddit blocks the crawler; IG/Threads aren't deeply indexed). Community techniques were captured via official docs + aggregator blogs that cite those communities, not scraped first-hand. Flagged honestly rather than fabricated.
+- Credit numbers (Omni Flash per-duration, 4K upscale cost) are third-party and flagged 待驗證 pending the in-app credit display.
+
+---
+
 ## [1.6.0] - 2026-06-05 — 模型精通 + Gemini Omni + 概念先行 prompting
 
 User feedback was blunt and correct: "your prompts have no theme, some shots are aimless, your video output is poor, and you're not familiar with the models — Vidu, Kling, Google Omni — go research them properly." Two real gaps exposed: (1) prompts were technically loaded but conceptually empty, (2) the skill missed an entire flagship model. This release fixes both.
