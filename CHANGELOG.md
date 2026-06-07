@@ -2,6 +2,42 @@
 
 All notable changes to this skill are documented here.
 
+## [1.6.3] - 2026-06-08 — 硬教訓：禁抽象，產品廣告要真實清楚的 hero + Flow JS 注入
+
+User verdict on the v1.6.2 "一滴的奢侈" Omni droplet ad: "honestly, terrible, change the product, it sucks." Correct, and a recurring pattern I kept missing.
+
+### 🔴 Hard rule baked: no abstract — concrete, clearly-visible product hero
+
+Pattern across the whole training arc: I keep defaulting to abstract VFX / minimalist art (mage phoenix "普通", mecha, time-rift/liquid-metal/ink-cosmos, and now a golden droplet suspended in void where the actual product is barely visible). Hao reads all of it as "爛". The droplet ad is the trap in pure form: "concept-first" got misused to turn the product INTO an abstract metaphor, so the bottle vanished.
+
+New `memory/feedback_no_abstract_concrete_hero.md` (dev-only) + a correction block at the top of `references/concept-first-prompting.md`:
+- Product ads must show a **real, recognizable, clearly-visible, desirable product as the hero** — not abstract particles/rifts/fluid/light, not minimalism so extreme the product disappears.
+- **concept = make the viewer crave the clearly-visible product**, NOT turn the product into a metaphor.
+- 4-question pre-send gate: (1) does the product appear clearly & fully? (2) would a stranger recognize it in 3s? (3) does this look like an ad or like VFX showboating? (4) does the concept make the product desirable or abstract it away? Any "no" → rewrite.
+
+### Live re-run, fixed: food ad with the product as clear hero
+
+Changed product (user picked food/dining). Generated a gourmet double-cheeseburger ad on Flow Omni Flash — the burger is the clear, fully-visible, recognizable hero (sesame bun, melting cheddar, steam, slate board, warm restaurant bokeh), an actual food-commercial look rather than abstract VFX. (Quality judgment left to the user per no-self-rating.)
+
+### Flow Slate injection — reliable JS method (supersedes click-focus)
+
+v1.6.2 said "click-focus first." On re-run, `computer.left_click` coordinates didn't line up: Flow's page is CSS 1920×919 (dpr=1) but the Chrome MCP screenshot is 1568×705 → x×1.224, y×1.304, and after generation the prompt box drops to CSS y≈809 (off-screen in the screenshot). Clicking "on" the box focused BODY. The reliable, coordinate-free method:
+```js
+div.dispatchEvent(new FocusEvent('focusin', {bubbles:true}));  // the missing piece
+div.focus();
+const target = div.querySelector('p, span, [data-slate-node]') || div;  // select inner node, not div
+// collapse a range to end of target, then beforeinput insertFromPaste; verify activeElement is the CE
+```
+Baked into `flow.md` (§Live verified + a coordinate-trap note: drive Flow boxes via JS, not screenshot-coordinate clicks) and `memory/feedback_contenteditable_react_dispatch.md` (踩坑 4.5 updated).
+
+### Files changed
+
+- `references/concept-first-prompting.md` — top correction block (concept ≠ abstracting the product; 4-question gate)
+- `automation/site-profiles/flow.md` — JS focus sequence as the reliable injection; coordinate-scaling trap; /edit conversational-editing note
+- `memory/feedback_no_abstract_concrete_hero.md` (NEW, dev-only); `memory/MEMORY.md` + `feedback_contenteditable_react_dispatch.md` updated
+
+---
+
 ## [1.6.2] - 2026-06-08 — Flow 實機操作驗證（Omni Flash 跑通 + concept-first 落地）
 
 After the user logged into Flow, ran the full pipeline live via browser automation and converted the v1.6.1 research-based Flow profile from "待驗證" to verified.

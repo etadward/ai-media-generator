@@ -78,9 +78,18 @@
 3. ✅ **Omni Flash 16:9 10s x2 = 30 點數**（live 確認，原研究待驗證數字解除）
    ⚠️ 此期間有「Omni Flash 半價 credits 限時優惠（~6/8）」，30 可能含折扣
 4. Esc 關設定面板
-5. ⚠️⚠️ **Flow prompt 框是 Slate，但必須先「真實 click 聚焦」再 beforeinput** —
-   直接 beforeinput（沒先 click）會失敗（domLen 不增）。這跟 OiiOii 不同！
-   → computer.left_click 框中央 → 再跑 beforeinput insertFromPaste → 驗 domLen
+5. ⚠️⚠️ **Flow prompt 框是 Slate，注入用「純 JS 完整聚焦序列」最可靠**（2026-06-08 二次驗證）：
+   computer.left_click 座標**對不上**（見下 §座標陷阱），改用 JS：
+   ```js
+   const div = [...document.querySelectorAll('[contenteditable="true"]')].find(d=>d.getBoundingClientRect().width>100);
+   div.dispatchEvent(new FocusEvent('focusin', {bubbles:true}));  // ← 關鍵，少這個會聚焦到 BODY
+   div.focus();
+   const target = div.querySelector('p, span, [data-slate-node]') || div;  // 選 inner node 不是 div
+   const range = document.createRange(); range.selectNodeContents(target); range.collapse(false);
+   const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range);
+   // 等 150ms → 驗 document.activeElement 的 contenteditable==='true' → 再 beforeinput insertFromPaste
+   ```
+   驗證 `focusedAfterJS===true` + domLen 大增（實測 773）才算成功。
 6. send button：prompt 框右下，`aria-disabled="false"` 的 button（class 是 styled-components
    亂碼 sc-xxx，用「box 右緣 + 框內 y 範圍 + not disabled」定位，別靠 class）
 7. 送出後 prompt 框清空 + canvas 出現 x2 影片佔位（shimmer loading）+ 左欄加「視頻」
@@ -93,6 +102,10 @@
 | beforeinput 前需先 click 聚焦？ | 否（直接注入即可）| **是（必須先 computer.left_click 框）** |
 | send button 定位 | `_send-button_`/`_credit-cost_` | styled-components 亂碼 class → 用位置+aria-disabled |
 | 設定面板 | 底部 toolbar icon | prompt 框右側「視頻·10s·x2」chip |
+
+**⚠️ 座標陷阱（2026-06-08 實測）：** Flow 頁面 **CSS 視窗 = 1920×919（dpr=1）**，但 Chrome MCP 截圖 = **1568×705** → x 縮放 1.224×、y 縮放 1.304×。**computer.left_click 用截圖座標會點錯位**（點 prompt 框結果聚焦 BODY）。生成後 prompt 框降到 CSS y≈809（截圖外）。**結論：Flow 的框互動一律走 JS（querySelector + 上面的聚焦序列），不要靠 computer.left_click 座標。** send button 也用 JS（位置 + aria-disabled）。
+
+**生成後點到既有 clip 會開 /edit/{uuid} 編輯視圖**（有 timeline + Omni Flash「描述編輯需求」對話框 = 對話式編輯入口）；回專案點左上返回鍵。
 
 **登入：** Flow session 會過期，重進停在 `accounts.google.com` 帳號選擇 → 用戶親自完成（Claude 不代登入）。登入後 URL = `labs.google/fx/zh/tools/flow`，首頁有「+ 新建項目」+ Flow TV/Discord/IG/X 頂欄連結 + PRO badge。
 
