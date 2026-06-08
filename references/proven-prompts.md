@@ -253,6 +253,170 @@ Full quick 360-degree bullet-time rotation around the woman wearing the dress. T
 
 ---
 
+## ✨ VFX / 魔法 / 科幻（無 IP，安全）
+
+**魔法傳送門開啟**
+```
+A glowing magical portal opening in the middle of an ancient forest, swirling blue and purple energy, leaves and debris being pulled toward it, a silhouette of a person approaching, mystical atmosphere, cinematic light flare, wide angle, 4K.
+```
+*為何好：能量漩渦+碎葉被吸入+剪影接近=傳送門標準視覺，藍紫雙色鎖定。｜來源 leonardo.ai*
+
+**死靈法師喚靈（無 IP 奇幻）**
+```
+A cloaked necromancer raising spirits in a moonlit graveyard, glowing runes on the ground, slow motion, stormy skies, eerie green mist, cinematic.
+```
+*為何好：slow motion + 發光符文 + 風暴天，把「施法瞬間」時間性與氛圍寫滿。｜來源 leonardo.ai*
+
+**太空巡洋艦離港（科幻空鏡）**
+```
+A massive star cruiser departing from a space port orbiting a red gas giant, smaller ships in the background, engine glow, cinematic slow zoom out, epic scale, 3D cinematic render.
+```
+*為何好：紅氣態巨行星+背景小船給尺度感，cinematic zoom out 揭史詩規模。｜來源 focalml.com*
+
+**賽博龐克機器人雨夜（科幻角色）**
+```
+An android walking through a neon-lit alley, rain falling, lens flares, puddles reflecting neon signs, cyberpunk environment, 3D cinematic render, moody atmosphere.
+```
+*為何好：霓虹+雨+鏡頭光暈+水窪反射=賽博龐克四件套。｜來源 medium aitooldiscovery*
+
+---
+
+## 🏃 運動 / 動作（速度感）
+
+**跑車甩尾東京夜（高能量）**
+```
+A sports car drifting around a corner on a wet Tokyo street at night, sparks flying, neon reflections on the car body, dynamic low camera angle, motion blur, high energy, cinematic color grading.
+```
+*為何好：甩尾火花+霓虹車身反射+低角度動態，速度感拉滿（避寫 Fast&Furious IP，改 dynamic high-energy）。｜來源 media.io / seedance.tv*
+
+**山路高速跟拍（賽車感）**
+```
+High-speed tracking shot of a sports car on a winding mountain road, motion blur on background, sharp focus on the vehicle, cinematic color grading, golden hour, dramatic atmosphere.
+```
+*為何好：tracking shot + 背景動態模糊 + 車身銳利 = 賽車跟拍核心對比。｜來源 media.io*
+
+---
+
+## 🌀 ASMR / 滿足感 / 無縫循環（loop）
+
+**水銀球變形 loop（極致 ASMR）**
+```
+A perfect sphere of liquid mercury sitting on a mirror surface, slowly deforming under an invisible force into a cube shape, then morphing back to a sphere, reflections shifting with each transformation, seamless loop-ready motion, ASMR-satisfying aesthetic, macro lens extreme close-up, clean minimalist background.
+```
+*為何好：球↔方變形 + 鏡面反射隨之變 + `seamless loop-ready` 明令可循環，是 satisfying loop 標竿。｜來源 simplified.com*
+
+**巧克力切片微距（食物 ASMR）**
+```
+Extreme close-up of a knife slicing glossy chocolate. Ultra-detailed texture visible. Smooth slow motion captures each cut, soft crack sound, warm key light, satisfying ASMR aesthetic.
+```
+*為何好：微距+慢動作+每刀脆裂聲，食物 ASMR 高黏著度公式。｜來源 simplified.com*
+
+> **滿足感咒語**：`seamless loop-ready motion`、`satisfying ASMR aesthetic`、`smooth and hypnotic movement`、`oddly satisfying`。
+
+---
+
+## 🎌 動漫 / 2D 動畫風
+
+**魔法少女變身（Kling anime 最高出片率）**
+```
+Anime magical girl spinning with sparkles and ribbons swirling around her, transformation sequence, vibrant pastel colors, dynamic camera rotation, glowing effects, anime style, cel shading, high quality animation.
+```
+*為何好：cel shading + 動態旋轉 + 變身敘事一次到位，多源重複引用。｜來源 vofy.art*
+
+**奇幻法師施法（無 IP）**
+```
+Anime wizard casting spell with glowing magic circle appearing, robes flowing, mystical energy particles rising, dramatic lighting, slow motion, vibrant purple and blue colors, anime style, fantasy aesthetic.
+```
+*為何好：slow motion + 粒子上升 + 魔法陣浮現，避免靜態貼圖感。｜來源 vofy.art*
+
+**雨中傘下 slice-of-life（情緒運鏡）**
+```
+Anime character standing in rain with umbrella, water droplets visible, neon city lights reflecting in puddles, melancholic mood, slow dolly forward, anime style, detailed rain effects, cinematic.
+```
+*為何好：slow dolly forward + 霓虹倒影 + melancholic，新海誠式情緒氛圍。｜來源 vofy.art*
+
+---
+
+## 🦁 自然 / 生態紀錄片
+
+**森林雨滴微距（BBC Earth 風，破折號分段法）**
+```
+Heavy rain falling on forest leaves — macro close-up, camera holding still — overcast natural light, every droplet catching grey sky — nature documentary style, BBC Earth reference — water running along branch edges, fog in background — shallow depth of field, slow motion, cinematic 4K quality, no text.
+```
+*為何好：破折號分段（鏡頭/光/細節/風格/景深）是 Veo 紀錄片高命中寫法，BBC Earth + no text 防雜訊。｜來源 veo3ai.io*
+
+**草原獅子特寫（極簡基準範本）**
+```
+Close-up of a lion in the savannah, gentle sunlight, ambient wind, 12-second slow pan, cinematic 4K.
+```
+*為何好：極簡但要素齊（主體+光+環境音+運鏡+時長），被多篇引用的 wildlife 基準。｜來源 cyberlink.com*
+
+**顯微結晶縮時（微觀/科學感）**
+```
+Microscopic crystalline structures growing in time-lapse, brilliant colors (purple, teal, gold) as crystals form, close-up macro perspective, scientific wonder and beauty.
+```
+*為何好：縮時+指定三色盤+macro，補足少見的微觀類別，鎖色防糊。｜來源 veo3ai.io*
+
+---
+
+## ✈️ 旅遊 / 目的地
+
+**晨霧山谷空拍揭幕（establishing）**
+```
+Sunrise over misty mountain valley, golden rays breaking through clouds, slow crane shot rising from low angle, epic and majestic atmosphere, cinematic 4K quality.
+```
+*為何好：slow crane shot rising from low angle 是 Veo 可靠運鏡，晨光破雲適合目的地開場。｜來源 veo3ai.io*
+
+**威尼斯運河晨景（地標城市）**
+```
+Venice canal at dawn, gondola floating past ancient buildings, perfect reflections in still water, slow push forward through the canal, warm morning light, serene atmosphere.
+```
+*為何好：slow push forward + 靜水倒影，第一人稱划進城市的旅遊鏡頭感。｜來源 veo3ai.io*
+
+**城市夜景 hyperlapse（高空車軌縮時）**
+```
+High altitude drone view, hyper-lapse sequence of a bustling metropolitan city skyline, light trails from car traffic, 30-second long exposure, deep blue night sky.
+```
+*為何好：hyper-lapse + 30-second long exposure 把曝光與時間語言講給模型聽。｜來源 edimakor.hitpaw.com*
+
+---
+
+## 💻 科技 / SaaS / App demo
+
+**SaaS 著陸頁 hero（保留真實 UI，治亂編介面）**
+```
+Create a clean B2B SaaS product demo video for a landing page hero. The scene shows an approved analytics dashboard on a laptop screen. Preserve the layout and visible UI exactly. Add subtle camera movement and gentle motion that shows fragmented data becoming one clear account timeline. Professional SaaS marketing style, calm lighting, no fake logos, no invented metrics, no unreadable text, no unrealistic interface behavior. End on a stable frame suitable for a headline overlay.
+```
+*為何好：明令 `Preserve the visible UI exactly + no invented metrics + 結尾停穩給標題`，直擊 AI 產品 demo 最大痛點（亂編介面/數字）。｜來源 veo3ai.io*
+
+**功能上線片（舊流程→新流程對比敘事）**
+```
+Create a 20-second feature launch clip for a B2B SaaS product. The viewer is a product operations manager preparing a release. Show the old workflow as scattered notes and status updates, then reveal the approved product screen where the new launch checklist organizes owners, tasks, and risk flags. Preserve UI structure, avoid fake customer names, keep text minimal and readable, and end with a clean CTA-safe frame. Motion should be clear, not flashy.
+```
+*為何好：以「買家是誰+舊痛點 vs 新解法」敘事開場（非先炫特效），SaaS 真正會轉換的結構 + CTA-safe 收尾。｜來源 veo3ai.io*
+
+**手機產品全息揭幕（Apple 風，產品清楚 hero）**
+```
+A sleek smartphone floating and rotating in space, holographic UI elements appearing around it, dark background with subtle blue light, Apple-style product reveal, clean and futuristic, premium tech commercial.
+```
+*為何好：懸浮旋轉+全息 UI 環繞+暗底藍光科技 reveal 標準語彙；產品本體清楚當 hero（符合禁抽象原則）。｜來源 seedance.tv*
+
+---
+
+## 🎥 病毒格式速查（POV / 縮時 / hyperlapse）
+
+| 格式 | 起手式 token | 範例 |
+|---|---|---|
+| **POV 第一人稱** | `First person POV [動作] through [環境], camera at eye level, slight motion shake, continuous forward movement` | Shibuya 夜走 POV、騎乘穿越 |
+| **Timelapse 縮時** | `[事件] in time-lapse, [變化過程], dramatic atmosphere` | 草原雷暴、結晶生長、設計稿成形 |
+| **Hyperlapse** | `hyper-lapse sequence, light trails, 30-second long exposure` | 城市車軌夜景 |
+| **Bullet-time** | `360-degree bullet-time rotation, continuous orbit, strong parallax` | 時尚 360、動作定格 |
+| **空拍 drone** | `high altitude drone view / slow crane shot rising from low angle` | 自然/地標揭幕 |
+
+> **共通鐵則**：給**時間性 token**（slow motion / time-lapse / hyperlapse / zoom-in / rotating drone）= 模型才有「動」的方向感。
+
+---
+
 ## ⚙️ 跨模型語法速查
 
 | 模型 | 一致性鎖法 | 多鏡頭語法 | 對白/音 |

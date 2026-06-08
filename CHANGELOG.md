@@ -2,6 +2,22 @@
 
 All notable changes to this skill are documented here.
 
+## [1.7.4] - 2026-06-08 — Prompt 庫再擴充：VFX/科幻/運動/ASMR/動漫/自然/旅遊/科技（56+）
+
+"更多!!!" — 雙線挖掘（1 subagent 成功 + 2 inline WebSearch），proven-prompts.md 34→56+，新增 8 類 + 病毒格式速查：
+- ✨ VFX/魔法/科幻 — 傳送門、死靈法師、太空巡洋艦、賽博龐克機器人（無 IP）
+- 🏃 運動/動作 — 跑車甩尾、山路跟拍
+- 🌀 ASMR/滿足感/loop — 水銀球變形 seamless-loop、巧克力切片 + 滿足感咒語
+- 🎌 動漫 — 魔法少女變身、法師施法、雨中 slice-of-life（Kling cel shading）
+- 🦁 自然/生態 — 森林雨滴 BBC 破折號法、草原獅子基準、顯微結晶縮時
+- ✈️ 旅遊 — 晨霧山谷 crane、威尼斯運河、城市 hyperlapse
+- 💻 科技/SaaS — 著陸頁 hero（保留真實 UI 治亂編）、功能上線敘事、手機全息揭幕
+- 🎥 病毒格式速查 — POV/timelapse/hyperlapse/bullet-time/drone 起手式表
+
+來源：vofy.art / veo3ai.io / seedance.tv / cyberlink / leonardo.ai / focalml / media.io / simplified / edimakor。誠實：anime+原生音訊全文未尋獲（標註，未杜撰）。
+
+---
+
 ## [1.7.2] - 2026-06-08 — Prompt 庫擴充：音樂MV / 9:16 UGC / 房產 / 時尚（34+）
 
 繼續挖（inline WebSearch，subagent 被 rate-limit 改自查）。proven-prompts.md 從 26 擴到 34+，新增 4 類：
