@@ -2,6 +2,18 @@
 
 All notable changes to this skill are documented here.
 
+## [1.7.5] - 2026-06-08 — Prompt 庫三擴：恐怖/復古/停格/節慶（70+）+ 反AI光滑 token
+
+"更多" again. 1 subagent（rate-limit 已解）挖到 14 個全文，proven-prompts.md 56→70+，新增 4 類：
+- 😱 恐怖/驚悚/Liminal — 醫院 found footage、牆後聲音（秒級克制）、鏡像邏輯、Backrooms + 克制恐怖咒語
+- 📼 復古/膠卷 — Super 8 公路、VHS 夜視（slight tracking error）、80s synthwave、Film Noir 百葉窗硬光
+- 🎭 停格/黏土 — Laika 微縮村、黏土小狗、羊毛氈 + 反AI光滑咒語（visible clay texture/12fps stuttery/fingerprints）
+- 🎄 節慶 — 跨年煙火空拍、聖誕 i2v、萬聖 POV
+
+關鍵洞察：氛圍類 prompt 多不綁模型、靠風格關鍵字；三類「反 AI 光滑」反向指令 baked 成 token（停格/VHS/克制恐怖）。誠實標註萬聖/聖誕 t2v 全文池較淺。來源：arsturn/imagine.art/hitpaw/reelmind/veoprompt/talesfromthegloom 等。
+
+---
+
 ## [1.7.4] - 2026-06-08 — Prompt 庫再擴充：VFX/科幻/運動/ASMR/動漫/自然/旅遊/科技（56+）
 
 "更多!!!" — 雙線挖掘（1 subagent 成功 + 2 inline WebSearch），proven-prompts.md 34→56+，新增 8 類 + 病毒格式速查：

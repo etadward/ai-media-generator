@@ -417,6 +417,116 @@ A sleek smartphone floating and rotating in space, holographic UI elements appea
 
 ---
 
+## 😱 恐怖 / 驚悚 / Liminal（克制 > jump scare）
+
+> **核心洞察：恐怖靠克制不靠血腥。** 用「鎖機位+數秒不動+第 N 秒一個動作」+ 邏輯破綻製造心理壓迫。
+
+**廢棄醫院 found footage（Veo，官方級結構）**
+```
+Horror film style, found footage POV shot. A long, narrow, decaying hospital corridor, lit only by the camera's weak light. A grotesque, long-limbed creature contorts itself as it scrambles along the ceiling towards the camera. SFX: distorted chittering sounds & the scraping of claws on plaster. Ambient: a low, unsettling drone.
+```
+*為何好：主體+動作+風格+光源+SFX+環境音全 slot 齊，Veo 官方教學 killer prompt。｜來源 arsturn.com*
+
+**牆後的聲音（Kling，秒級克制恐怖）**
+```
+Interior hallway at night. Camera locked off, slightly low angle. A closed door at the end of the hallway. A single practical sconce on the wall casting an oval of light. The camera holds for 6 seconds — nothing moves. On second 7, a shadow passes under the door. Camera remains locked. 16mm grain, green cast in shadows.
+```
+*為何好：鎖機位+6 秒不動+第 7 秒一個影子=張力來自克制，精準到秒。｜來源 imagine.art*
+
+**鏡像邏輯（Kling，邏輯破綻恐怖）**
+```
+Medium shot, bathroom mirror. The reflection shows something different from what should be there. Camera holds while the viewer studies the reflection. Mundane bathroom sconce lighting, clinical white. The horror is in the logic break.
+```
+*為何好：恐怖點在「邏輯破綻」非血腥，臨床白光反襯，極省 token。｜來源 imagine.art*
+
+**Backrooms liminal space**
+```
+A solitary person in their 20s seen from behind, wearing a plain beige hoodie and dark jeans, slowly walking through an endless maze of yellowed office carpet corridors with buzzing fluorescent ceiling panels.
+```
+*為何好：黃地毯+嗡嗡日光燈+背影=liminal 三件套，最具辨識度。｜來源 talesfromthegloom.com*
+
+> **克制恐怖咒語**：`camera holds for N seconds, nothing moves` / `the light creates more darkness than it resolves` / `the horror is in the logic break`。
+
+---
+
+## 📼 復古 / 膠卷美學（年代質感寫進光裡）
+
+**Super 8 公路片（1970s）**
+```
+Super 8mm home movie footage, 1970s road trip, view from the passenger seat of a convertible driving through the American Southwest desert, wind blowing hair, warm sunset light, dust particles, shaky handheld camera, nostalgic mood.
+```
+*為何好：點名 Super 8mm + 手持抖+塵粒+暖夕陽=顆粒感建進光裡。｜來源 hitpaw*
+
+**VHS found footage（1999 夜視）**
+```
+1999 camcorder footage, night vision mode, walking through a dark forest, flashlight beam illuminating trees, heavy digital noise, glitching tape artifacts, timestamp in corner "SEP 24 1999", scary atmosphere.
+```
+*為何好：年份+夜視+角落時間碼+磁帶 glitch=VHS 招牌，可兼恐怖。｜來源 hitpaw*
+
+**80s Synthwave VHS**
+```
+1980s anime style, dark cyberpunk city street, neon pink and blue signage, rain falling, a retro sports coupe driving by, VHS tape quality, slight tracking error at the bottom, synthwave aesthetic, lo-fi glow.
+```
+*為何好：`slight tracking error at the bottom` 精準召喚 VHS 底部抖動條（最像真磁帶的細節）。｜來源 hitpaw（IP 車名已改 generic）*
+
+**Film Noir（1950s 偵探）**
+```
+Film Noir style 1950s, detective office, smoke swirling in the air, light streaming through venetian blinds creating harsh shadows, a glass of whiskey on the desk, black and white, cinematic lighting, suspenseful atmosphere.
+```
+*為何好：百葉窗硬光條紋=noir 視覺簽名。｜來源 hitpaw*
+
+> hitpaw 同源另 11 條全文（1920s 默片、Technicolor 郊區、16mm、迪斯可、有氧操廣告、90s sitcom 片頭等）。
+
+---
+
+## 🎭 停格 / 黏土動畫（反 AI 光滑是關鍵）
+
+**Laika 風微縮村落空拍**
+```
+Stop-motion claymation aerial view of a miniature handcrafted village at sunset, tiny clay villagers walking down a cobblestone street, felt grass on the hills, paper trees, fabric clouds drifting overhead, warm golden hour lighting, slightly stuttery 12fps animation feel, Laika studio aesthetic, slow cinematic dolly forward.
+```
+*為何好：`12fps stuttery` + 逐一材質（felt 草/paper 樹/fabric 雲）把手作質感寫死。｜來源 reelmind.ai*
+
+**黏土小狗（Wallace & Gromit 風）**
+```
+Stop-motion claymation small fluffy dog with oversized round eyes and a wagging tail, sitting in a miniature handcrafted living room with a felt rug and a tiny clay couch, warm soft lighting, visible clay texture, slight imperfections, 12fps stop-motion animation feel.
+```
+*為何好：`visible clay texture, slight imperfections` 是讓 AI 別做太光滑的關鍵指令。｜來源 reelmind.ai*
+
+**羊毛氈牧羊（材質多樣）**
+```
+Wool felt stop motion of a shepherd and sheep on a rolling hillside. Soft felt textures, visible stitching, cloudy sky backdrop, gentle stop motion pacing.
+```
+*為何好：`visible stitching` 是羊毛氈定格獨有質感，跳脫黏土路線。｜來源 reelmind.ai*
+
+> **反 AI 光滑咒語（停格必加）**：`visible clay texture / fingerprints / staggered movement / 12fps stuttery / slight imperfections`。
+
+---
+
+## 🎄 節慶 / 季節
+
+**跨年煙火空拍（未來城市）**
+```
+Cinematic drone shot, aerial view of a futuristic city skyline at midnight on New Year's Eve. Massive multi-colored fireworks exploding in the sky, illuminating the glass skyscrapers. Reflections of the fireworks shimmering on a large river below. 4k, hyper-realistic, volumetric lighting, smoke trails dissipating in the wind, celebratory atmosphere, wide angle.
+```
+*為何好：`reflections shimmering on river` + `smoke trails dissipating in the wind` 給物理依據，煙火不像貼圖。｜來源 veoprompt.org*
+
+**聖誕 i2v（先生圖再動，符合 i2v 黃金公式）**
+```
+Camera slowly dolly-in toward the tree, candlelight flickering, soft bokeh glow, gentle snowfall outside window.
+```
+*為何好：專為 i2v 設計——只寫運鏡+氛圍動態（燭光/飄雪），不重述視覺。先用 Nano Banana 生溫馨客廳聖誕樹圖 → 套此句 i2v。｜來源 videoweb.ai*
+
+**萬聖 POV 廢棄遊樂園**
+```
+POV: walking through abandoned carnival, creaking rides, whispers in the background, fog rolling in.
+```
+*為何好：POV+環境音（吱嘎/低語）+霧氣三元素撐起氛圍，極簡萬聖感強。｜來源 fylia.ai*
+
+> ⚠️ 誠實：萬聖/聖誕的「t2v 級完整全文」公開池較淺（多為靜圖 prompt 或 i2v 短句）。要完整聖誕 t2v → 套上方煙火結構把主體換聖誕場景，比抄現成可靠。
+
+---
+
 ## ⚙️ 跨模型語法速查
 
 | 模型 | 一致性鎖法 | 多鏡頭語法 | 對白/音 |
