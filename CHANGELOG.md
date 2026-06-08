@@ -2,6 +2,32 @@
 
 All notable changes to this skill are documented here.
 
+## [1.7.1] - 2026-06-08 — NEW: 經驗證 Prompt 庫（26+ 逐字可貼）
+
+User: "keep strengthening, and find more and better prompts." Dispatched 3 parallel research subagents (Veo/Omni/Flow · Kling/Seedance/Vidu · ad/product/food/car) and curated the best into a new copy-paste prompt library.
+
+### NEW `references/proven-prompts.md`
+
+26+ verbatim, source-cited, copy-paste-ready prompts organized by use-case, prioritizing official sources (Google Cloud Veo 3.1 guide, DeepMind, Replicate, klingaio, vidu.com) over blogs:
+- **美食/飲料** — burger mid-air assembly, steak sizzle macro (ASMR native audio), breakfast explosion 3-act, martini rim-light suspension, coffee rack-focus ritual
+- **汽車/精品/產品 hero** — salt-flat truck S-curve, EV LED reveal (Chiaroscuro), watch floating water-droplets spotlight, perfume peony hard-cut spray, 360° watch
+- **電影感/運鏡** — official crane reveal + shallow-DOF bus window
+- **多鏡頭敘事** — the official Veo timestamp 4-shot explorer, Seedance 0–4s/4–9s timeline, Kling Shot 1/2/3 + Audio
+- **原生對白/音訊** — Veo ingredients dialogue, Tokyo vlogger + the `(no subtitles!)` trick, Kling `[character: voice]: "line"`
+- **一致性鎖法** — Seedance `@ProductRef` + `Reference @X for consistent...`, Kling text "remains stable and readable", Vidu `@char_front`+`@char_profile`, Gemini Omni multi-turn editing + product negative-constraints template
+
+Plus the ad-prompt golden structure, a lighting-vocabulary cheat-sheet (rim light / Chiaroscuro / single-spotlight+black / golden-hour), and a cross-model syntax table (how each of Veo/Omni/Kling/Seedance/Vidu locks consistency, does multi-shot, and does dialogue).
+
+### Wired in
+
+- `SKILL.md` — proven-prompts.md added to routing ("use when user wants better prompts / examples / templates").
+
+### Honest note
+
+Flow TV's per-clip "Show Prompt" is interactive-only (not crawlable); used DeepMind's officially-published Flow/Veo-grade example instead. One blog refused verbatim output (copyright) and was excluded rather than paraphrased into fabrication. All 26 are verbatim from their cited sources.
+
+---
+
 ## [1.7.0] - 2026-06-08 — 里程碑：創意 craft + Flow 實機 + 模型精通（整段訓練整合）
 
 Milestone consolidating the v1.6.x arc — the skill went from "operates the tools" to "knows which tool, gives the work an idea, and runs it live on Flow." Also folds in v1.6.4/1.6.5 (which shipped as tags without changelog entries) and adds the capstone live showcase.
