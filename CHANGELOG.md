@@ -2,6 +2,22 @@
 
 All notable changes to this skill are documented here.
 
+## [1.7.6] - 2026-06-08 — Prompt 庫四擴：寵物/美妝/珠寶/健身/遊戲/室內/企業/水下（~99）
+
+"繼續". 2 個並行 subagent 各挖 14-15 全文，proven-prompts.md 70→~99，新增 8 類：
+- 🐾 寵物/動物 — 萌寵歪頭、海灘黃金時刻、擬人偽紀錄片、會說話貓 i2v
+- 💄 美妝 — 口紅 editorial、上妝三連拍、精華液 macro→dolly-out、ASMR 敲玻璃
+- 💎 珠寶 — 鑽戒彩虹折射、100mm macro push-in、18k 金鏈 anisotropic（建議走 i2v）
+- 💪 健身/wellness — gym 蒙太奇、屋頂瑜伽 sun salutation、晨霧跑者
+- 🎮 遊戲/電競 — fantasy trailer、第三人稱 HUD、賽博龐克 megacity
+- 🏛 室內/建築 — 開放廚房走位、180° orbit、golden hour 光掃 i2v
+- 🏢 企業/教育 — 2D vector explainer、帶 label 圖解、黑板 motion graphics
+- 🐠 水下/空拍 — 生物發光深海、珊瑚礁完整範本、雪山日出空拍
+
+IP 安全：cyberpunk 的 Blade Runner 改 neo-noir dystopian。誠實：esports 廣播感全文池淺。來源：imagine.art/simplified/aiveed/hailuoai/seedance.tv/boardspace/veo3ai/makeaiprompt 等。
+
+---
+
 ## [1.7.5] - 2026-06-08 — Prompt 庫三擴：恐怖/復古/停格/節慶（70+）+ 反AI光滑 token
 
 "更多" again. 1 subagent（rate-limit 已解）挖到 14 個全文，proven-prompts.md 56→70+，新增 4 類：

@@ -527,6 +527,196 @@ POV: walking through abandoned carnival, creaking rides, whispers in the backgro
 
 ---
 
+## 🐾 寵物 / 動物
+
+**萌寵歪頭對鏡（寵物 influencer hero）**
+```
+Adorable golden retriever puppy tilting head curiously at camera, soft couch background, cute and wholesome aesthetic, pet influencer style, bright and cheerful.
+```
+*為何好：歪頭對鏡=擬人神態+親密感，演算法獎勵的寵物 hero shot。｜來源 aiveed.io*
+
+**黃金獵犬海灘黃金時刻（Veo 3.1 寫實寵物運動最強）**
+```
+Golden retriever running joyfully along a sandy beach at sunset, waves crashing in the background, warm golden hour lighting, slow-motion capture, cinematic style, camera tracking the dog from the side.
+```
+*為何好：side-tracking + slow-motion + golden hour 三件套=寵物廣告最穩運動鏡。｜來源 simplified.com*
+
+**動物擬人偽紀錄片（病毒哏）**
+```
+A nature documentary scene showing an otter piloting a small airplane. The otter wears aviator goggles and a tiny scarf, paws on the controls, looking focused yet playful.
+```
+*為何好：「nature documentary」框架+具體道具讓荒謬設定有寫實質感。｜來源 imagine.art*
+
+**會說話的貓 i2v（Seedance @Image1 防臉崩）**
+```
+Create a smooth video using @Image1 as the main reference. Add natural head, eye, and ear movements, and sync the cat's expressions with the playful cat voice. Keep the scene cute, stable, and visually consistent with soft motion and lighting.
+```
+*為何好：拆 head/eye/ear movements + stable/consistent 防漂移，寵物配音 i2v 關鍵句。｜來源 seedance2prompt*
+
+---
+
+## 💄 美妝 / 化妝品
+
+**口紅扭開觸唇 editorial（產品清楚 hero）**
+```
+A tube of lipstick twists open in extreme close-up, revealing a deep burgundy color. The tip touches a lip in slow motion. Camera pulls back to reveal a model's face with a confident expression. High-fashion editorial lighting with dramatic shadows.
+```
+*為何好：從產品 extreme close-up 拉到 model face，產品（膏體+色號）清楚當主角。｜來源 simplified.com*
+
+**上妝三連拍 beauty sequence（一條出 3 鏡）**
+```
+Extreme close-up beauty sequence: mascara wand sweeps across lashes, lipstick glides across lips, blush brush dusts across cheekbone. Each shot is 2 seconds with smooth transitions. Soft, diffused beauty lighting. High-end cosmetics commercial style. Skin texture visible.
+```
+*為何好：內建 each shot 2 seconds 分鏡 + skin texture visible 逼真細節。｜來源 simplified.com*
+
+**精華液大理石奢華（macro logo → dolly-out 揭幕）**
+```
+Create a cinematic luxury skincare advertisement featuring a transparent glass serum bottle placed on polished white marble. Tiny water droplets slide down the bottle surface. Begin with an extreme macro close-up of the brand logo, then perform a slow dolly-out revealing the full product. Use soft diffused studio lighting with subtle golden highlights.
+```
+*為何好：macro logo→dolly-out 全貌的揭幕運鏡，產品全程明確主角=精華液教科書結構。｜來源 imagine.art*
+
+**ASMR 護膚敲玻璃（9:16，Seedance 原生音）**
+```
+Create a vertical ASMR video with no music, focusing on macro details. A light blue skincare gel bottle sits on glass. A pale, elegant hand gently taps the glass, producing crisp fingernail tapping sounds.
+```
+*為何好：vertical + no music + fingernail tapping sounds 直攻 ASMR 短影音。｜來源 imagine.art*
+
+---
+
+## 💎 珠寶 / 鑽石特寫
+
+**鑽戒旋轉彩虹折射 macro**
+```
+Diamond ring slowly rotating on velvet display, catching light and creating rainbow prisms, extreme macro detail, black background with spot lighting, luxury jewelry commercial.
+```
+*為何好：rainbow prisms + spot lighting + black background 命中鑽石火光物理。｜來源 aiveed.io*
+
+**鑽戒天鵝絨 push-in（攝影語彙級）**
+```
+A macro shot of a diamond ring resting on a dark velvet cushion, slow cinematic push-in with a 100mm macro lens, soft studio lighting emphasizing sharp specular highlights and light refraction.
+```
+*為何好：指定 100mm macro lens + specular highlights/refraction 是攝影師級寫法；i2v 用起始圖鎖構圖最穩。｜來源 hailuoai.video*
+
+**18k 金項鍊黑絲擺盪（金屬髮絲光）**
+```
+A 18k gold necklace fluidly swaying against a black silk background, gentle slow pan left with a shallow depth of field, warm cinematic lighting highlighting the metallic sheen and anisotropic reflections.
+```
+*為何好：anisotropic reflections 精準描述金屬髮絲光 + fluidly swaying 給柔性動態。｜來源 hailuoai.video*
+
+> **珠寶鐵則**：video 全文池淺、t2v 易變形 → 優先 **i2v**（先生 hero 圖再動），鎖形狀。
+
+---
+
+## 💪 健身 / 運動 / wellness
+
+**高強度 gym 蒙太奇（一條出 4 動作）**
+```
+A high-energy gym workout montage: kettlebell swings, battle ropes, box jumps, and a final victorious fist pump. Quick cuts between exercises with each clip lasting 1-2 seconds. Dramatic gym lighting with dark background. Motivational fitness content. Punchy, intense energy.
+```
+*為何好：列 4 動作 + 內建 1-2 sec quick cuts 剪輯節奏，dark background 戲劇打光。｜來源 simplified.com*
+
+**屋頂日出瑜伽（具名動作鏈）**
+```
+A woman practices yoga alone on a high rooftop at sunrise. City skyline stretches behind her, golden hour light catching her silhouette. She moves through sun salutation sequence.
+```
+*為何好：具名 sun salutation sequence 給明確動作鏈 + golden hour silhouette 剪影美學。｜來源 imagine.art*
+
+**晨霧森林跑者 tracking（臨場細節）**
+```
+A jogger running on a misty forest trail at dawn. Camera tracks alongside at running pace. Dappled light breaks through the tree canopy. The runner's breath is visible in the cool air. Fitness lifestyle content. Muted, natural color palette.
+```
+*為何好：camera tracks at running pace + breath visible in cool air 兩個細節給臨場寫實，muted palette 避廉價飽和。｜來源 imagine.art*
+
+---
+
+## 🎮 遊戲 / 電競
+
+**Fantasy game trailer 開場（world-reveal）**
+```
+A warrior discovers an ancient mech buried in the desert—golden hour lighting, swirling sand, quiet awe, cinematic pacing.
+```
+*為何好：quiet awe + cinematic pacing 給情緒節奏，AAA trailer 經典 world-reveal 開場。｜來源 imagine.art*
+
+**Gameplay 第三人稱 + HUD（遊戲畫面語言）**
+```
+Third-person view of a fantasy character running through a burning village—epic soundtrack, intense camera motion, cinematic HUD overlay.
+```
+*為何好：唯一帶 cinematic HUD overlay + third-person 直接召喚遊戲畫面感。要真電競感再加 `scoreboard overlay, kill-feed, broadcast graphics, crowd roar`。｜來源 imagine.art*
+
+**賽博龐克 megacity（環境空鏡，三模型通吃）**
+```
+A futuristic cyberpunk megacity at night, flying cars between massive skyscrapers covered in holographic advertisements, rain falling, neo-noir dystopian atmosphere, camera tilting up from street level.
+```
+*為何好：flying cars + holographic ads + rain + 街面 tilt-up=賽博龐克四件套。（已把 IP 詞改 `neo-noir dystopian` 避 OiiOii 版權攔截。）｜來源 seedance.tv*
+
+---
+
+## 🏛 室內設計 / 建築
+
+**豪華開放廚房走位（模板型，可換 room/方向）**
+```
+Luxury open-plan kitchen interior, natural light from south-facing windows, smooth pan from island to living room, interior design magazine style, warm tones, professional staging.
+```
+*為何好：指採光方向 + 運鏡起訖 + magazine style 風格錨，換 room 即用。｜來源 seedance.tv*
+
+**環形繞室 orbit（Kling 室內專用運鏡）**
+```
+Camera orbits 180 degrees around room center at eye level, revealing design from multiple angles, then settles facing the main feature wall.
+```
+*為何好：180° orbit + 固定 eye level + 收尾於 feature wall（有起點終點，Kling 不漂移）。｜來源 boardspace.ai*
+
+**Golden hour 光掃過房間（i2v 完美句型）**
+```
+Warm sunlight slowly sweeps across room from window, casting moving shadows on walls and floor, then settles into soft ambient glow.
+```
+*為何好：只寫「光怎麼動」不重述陳設=完美 i2v（先生室內圖再動）。｜來源 boardspace.ai*
+
+---
+
+## 🏢 企業 / Explainer / 教育
+
+**機器人吉祥物 2D explainer（鎖品牌色）**
+```
+Minimalist 2D vector art of a friendly robot mascot waving at the camera, eye-level medium shot, in a modern sunlit startup office with large windows and plants, using a color palette of navy blue, coral, and off-white.
+```
+*為何好：minimalist 2D vector art + 三色盤鎖扁平風與品牌色，避免寫實漂移。｜來源 imagine.art*
+
+**帶 label 圖解動畫（教育最可靠）**
+```
+Animation showing a cell undergoing mitosis, clear labels for each phase (prophase, metaphase, anaphase, telophase), educational diagram style, clean and clear visualization, suitable for high school biology.
+```
+*為何好：逐一寫出要標的 phase + educational diagram style + 指定學齡=帶 label 圖解動畫最穩寫法。｜來源 veo3ai.io*
+
+**黑板 motion graphics（低成本高辨識）**
+```
+A clean animated chalkboard shows a simple solar eclipse diagram: Sun, Moon, Earth labeled. Smooth push-in as arrows animate to show movement. Flat, high-contrast classroom style with white lines on dark green.
+```
+*為何好：white lines on dark green + arrows animate 精準描述黑板圖解動態。｜來源 makeaiprompt.com*
+
+---
+
+## 🐠 水下 / 海洋 / 空拍地景
+
+**生物發光深海洞穴（光線穿透 + 發光生物）**
+```
+A deep sea diver descending into a bioluminescent underwater cave, glowing jellyfish and coral, light rays penetrating from above, ethereal atmosphere, slow motion, IMAX quality.
+```
+*為何好：bioluminescent + 上方 light rays penetrating + slow motion + IMAX，水下標誌畫面一次寫滿。｜來源 seedance.tv*
+
+**珊瑚礁慢移 dolly（完整範本，物理交代到位）**
+```
+Create a serene and vibrant animated video showcasing a pristine underwater coral reef. The camera performs a slow, graceful horizontal dolly shot, revealing a diverse ecosystem teeming with life. Schools of tropical fish swim past brilliantly colored soft and hard corals. Sunlight penetrates the surface from above, creating beautiful caustic patterns and dappled light rays that dance across the reef. The water is crystal clear, with a slight gentle current causing the anemones and soft corals to sway hypnotically. Professional underwater lighting, broad diffuse light highlighting the spectrum of colors, avoiding harsh shadows.
+```
+*為何好：明寫 caustic patterns / dappled light rays / 海流讓珊瑚 sway / 避免 harsh shadows，水下打光與物理交代完整。｜來源 medium aitooldiscovery*
+
+**雪山日出空拍（光打哪+雲怎麼動）**
+```
+Aerial drone shot flying over a vast mountain range at sunrise, golden light hitting snow-capped peaks, clouds flowing through valleys below, cinematic 4K quality, smooth camera movement.
+```
+*為何好：golden light hitting peaks + clouds flowing through valleys 給空拍兩個動態錨，smooth movement 防抖。｜來源 seedance.tv*
+
+---
+
 ## ⚙️ 跨模型語法速查
 
 | 模型 | 一致性鎖法 | 多鏡頭語法 | 對白/音 |
