@@ -2,6 +2,24 @@
 
 All notable changes to this skill are documented here.
 
+## [1.8.6] - 2026-06-10 — OiiOii 大量實測「全部做」：一致性系統 + 拉片復刻 + 3 模型對比
+
+Completed all 3 remaining OiiOii test areas the user asked for (全部做).
+
+1) Consistency system (存為角色/場景/風格): select a canvas image then right-click -> 存為角色/場景/風格 -> saved to 資產 library (toast 已存為風格) -> reuse via the 資產 button (= the OiiOii UI for Seedance @AssetName role-assignment; char locks shape, scene locks bg, style locks look). Free. Gotcha baked: must LEFT-click to select the image FIRST, else right-click yields the canvas menu not the image menu.
+
+2) 拉片復刻 (3rd headline feature): mapped entry — home template -> canvas with a 5-step guided tour, center +上傳 frame, tooltip 在這裡上傳一段影片開始複刻 = upload a reference video -> shot-by-shot recreation. Full run needs a user-provided reference video (not run this round; honestly flagged).
+
+3) Three-model manual comparison (same perfume-bottle prompt): Kling 3.0 Pro (clean studio, hexagonal glass pedestal), Vidu Q3 Pro (dramatic editorial, magenta glow, red-amber), Hailuo 2.3 Pro (5s; square bottle, round black pedestal, dramatic top spotlight). All clear concrete heroes; lighting character differs by model. ~130cr total (cheap manual).
+
+Key reliability findings baked into oiioii.md §0:
+- Robust JS model-selection method (coordinate-click Agent to open, then JS by textContent for toggle/影片-tab/model) — survives fresh-space coordinate drift.
+- Model duration limits differ + carry over on model-switch -> conflict: Hailuo 2.3 Pro supports only 5s; the OiiOii agent CATCHES the conflict and offers 調整為5秒/換模型 and self-corrects. Per-model caps: Hailuo 5s / Gemini Omni 4s / X Imagine 6s / Seedance 10s.
+
+Session credit use ~1,833 (20,612->18,779).
+
+---
+
 ## [1.8.4] - 2026-06-10 — OiiOii 大量實測：手動模式 4 模型連測（成本+品質實證）
 
 OiiOii 大量實測 continued in cheap MANUAL mode (Agent off + pick model) to benchmark the new models the skill did not know:

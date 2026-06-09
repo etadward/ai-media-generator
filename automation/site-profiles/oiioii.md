@@ -28,6 +28,18 @@
 5. 點 send 粉箭頭
 ```
 
+**🔧 可靠的 JS 選模型法（2026-06-10 三模型連測驗證，比純座標穩）：**
+座標會因 fresh space 載入時機/y 偏移落空。穩做法 = **座標點開 Agent 按鈕（~723,665）** 後，其餘全 JS（用 textContent 比對，不靠座標）：
+```js
+// (先座標點 Agent 開面板，因為 button 載入時 textContent 可能空，座標較穩)
+// 然後 JS：
+const toggle=[...document.querySelectorAll('button,[role="switch"],input')].find(el=>{const r=el.getBoundingClientRect();return r.top>360&&r.top<420&&r.left>820;}); toggle?.click(); // 關 Agent toggle
+const vTab=[...document.querySelectorAll('*')].find(el=>el.children.length<=1&&el.textContent.trim()==='影片'); (vTab.closest('button,[role="tab"],div')||vTab).click();
+const opt=[...document.querySelectorAll('*')].find(el=>el.children.length<=2&&el.textContent.trim()==='Kling 3.0 Pro'); opt.scrollIntoView({block:'center'}); (opt.closest('[role="button"],button,li,div')||opt).click();
+// 驗證：currentModel = bottom button 含 model 名
+```
+⚠️ fresh space 要等 ~2.5s canvas 載入；純 JS find Agent button 常因 textContent 空而 miss → 改座標點開 Agent 最穩，再 JS 做 toggle/tab/model。
+
 ### 🆕 模型實測成本+品質（2026-06-10 手動模式 4 連測，credits）
 | 模型 | 規格 | credits | 實測結果 |
 |---|---|---|---|
@@ -37,6 +49,15 @@
 | Seedance 2.0 pro | (見 §12.5 盒飯 formula) | ~ | 影片旗艦 |
 | 商品展示廣告 skill | 15s 16:9 **1080p** | **~1,500** | ✅ 玫瑰金腕錶精緻，但多 gate agent + 1080p，貴 75× |
 > **手動模式（Agent off + 選模型）每支 7-30cr 超便宜**（圖 7cr / 短影片 20-24cr）；skill 模式貴很多（~1500cr）。要大量試/迭代 → 手動。要圖內文字 → Oii Image 2。要低成本影片 → Oii X Imagine / Gemini Omni。
+
+### 🆕 三模型香水瓶對比（2026-06-10 同 prompt 實測 Kling/Vidu/Hailuo）
+| 模型 | 結果 | note |
+|---|---|---|
+| **Kling 3.0 Pro** | 六角玻璃台座、乾淨棚拍、金噴頭+琥珀液、暗反光 | 乾淨產品棚拍風 |
+| **Vidu Q3 Pro** | 修長瓶、紅琥珀漸層、洋紅氛圍光暈、戲劇打光 | editorial/戲劇感更強 |
+| **Hailuo 2.3 Pro** | （5s）方形瓶、金蓋、圓黑台座、戲劇頂聚光、暗色極簡 | ⚠️ 見下方時長限制；agent 自動修正衝突後成功 |
+- 三者都讓香水瓶清楚當 hero（禁抽象 ✓），但**打光性格不同**：Kling 偏乾淨棚拍、Vidu 偏戲劇 editorial。選模型可依想要的廣告調性。
+- **⚠️⚠️ 模型時長限制不同，切模型舊時長殘留會衝突！**：**Hailuo 2.3 Pro 僅支持 5s**（殘留 6s → 「生成失敗：hailuo23pro 僅支持 5秒」）。**好消息：OiiOii agent 會抓到衝突**並跳「調整為 5 秒繼續 / 換模型」→ 點調整即可。各模型上限：Hailuo 5s / Gemini Omni 預設 4s / X Imagine 6s / Seedance 10s。切模型後檢查時長。
 
 ### 🆕 模型清單變動（2026-06-08 實測）
 **圖片：** **Oii Image 2 [Best]**（超強文字控制+寫實，新旗艦，取代 GPT-Image2）/ Oii Nano Pro / Oii Nano 2 / **Oii 4o**（GPT-4o 改名）/ Midjourney niji7 / Seedream 5.0
@@ -84,10 +105,19 @@
 - 🆕 i2v 框 tabs：**文生 / 多參（多參考圖，可加圖片+影片）/ 首尾幀（first-last frame 控制）** —— 比舊版增強。
 - 注入運鏡 prompt 進**右側 canvas-side 框**（contenteditable left>600，不是左 agent panel）→ beforeinput 注入 → send（i2v 框右側粉箭頭 left>980）。i2v prompt 照規則 prefix「根據圖片中的物體、畫面、風格來生成影片」+ 只寫運鏡。
 
+### ✅ 一致性系統：存為角色/場景/風格（2026-06-10 實測，免費）
+- 選中 canvas 圖右鍵 → **存為角色 / 存為場景 / 存為風格** → toast「已存為風格」→ 存進**資產庫**。
+- 之後新生成用底部「**資產**」按鈕引用（= Seedance `@AssetName` 分派職責技巧的 OiiOii UI；角色鎖造型、場景鎖背景、風格鎖質感）→ 跨鏡頭一致性。
+- ⚠️ **gotcha：右鍵前要先左鍵「選中」圖**，否則右鍵出的是 canvas 選單（貼上/多選/一鍵整理/添加畫板/上傳）不是圖片選單。圖片選單才有生成影片/存為角色等。
+
+### 🆕 拉片復刻（三大新功能之一，2026-06-10 測繪入口）
+- 首頁「拉片復刻」模板 → 進 canvas，5 步引導 tour（提示 1/5「上傳影片」），中央大框 +上傳，tooltip「**在這裡上傳一段影片開始複刻**」。
+- 用途：**上傳一段參考影片 → 逐鏡復刻**（分析參考片運鏡/節奏/結構 → 重新生成同結構的新片）。適合「看到喜歡的影片想複刻同款運鏡/結構」。
+- ⚠️ **需本地參考影片檔上傳才能跑**（用 file_upload）。本次無參考片，僅測繪入口/用途；完整逐鏡流程待有參考片時跑。
+
 ### 待深測（下次）
-- 拉片復刻完整流程（上傳參考片 → 逐鏡生成）
+- 拉片復刻完整逐鏡流程（需用戶提供參考影片檔）
 - Skill 庫怎麼存/複用自訂 workflow
-- Kling 3.0 / Vidu Q3 / Hailuo 2.3 手動實測對比
 
 ---
 
