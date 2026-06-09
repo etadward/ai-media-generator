@@ -38,7 +38,23 @@ const vTab=[...document.querySelectorAll('*')].find(el=>el.children.length<=1&&e
 const opt=[...document.querySelectorAll('*')].find(el=>el.children.length<=2&&el.textContent.trim()==='Kling 3.0 Pro'); opt.scrollIntoView({block:'center'}); (opt.closest('[role="button"],button,li,div')||opt).click();
 // 驗證：currentModel = bottom button 含 model 名
 ```
-⚠️ fresh space 要等 ~2.5s canvas 載入；純 JS find Agent button 常因 textContent 空而 miss → 改座標點開 Agent 最穩，再 JS 做 toggle/tab/model。
+⚠️ fresh space 要等 ~2.5s canvas 載入。
+
+**🔧🔧 最可靠選模型法（2026-06-10 Wan/Kling Omni/HappyHorse 三連測最終定案）= 全 JS 迴圈開面板：**
+```js
+// JS 迴圈找+點 Agent 按鈕開面板（避開兩大坑，比座標穩）
+for(let i=0;i<3;i++){
+  const ab=[...document.querySelectorAll('button')].find(x=>{const t=(x.textContent||'').trim();const r=x.getBoundingClientRect();return (t==='Agent'||/^Agent/.test(t))&&r.top>600;});
+  if(ab){ ab.click(); await sleep(800); }
+  if(document.body.innerText.includes('Oii Image 2')) break;  // 驗證面板開了
+  await sleep(500);
+}
+// 然後 toggle off / 影片 tab / 點 model（textContent 比對）/ 注入 / send
+```
+**兩大坑（卡很久才發現）：**
+- **🐞 「Claude is active in this tab group」toast 蓋住 Agent 按鈕**（toast 在底部置中 x~655-915，Agent 在 x~723）→ 座標點 Agent 會點到 toast！每次導航 toast 重現。**JS 找 button 不靠座標就免疫**。
+- **🐞 renderer 累積變重**：開過 ~10 個 space 後同 tab 的 tldraw canvas 變重 → 截圖 timeout、座標點擊建出雜框、面板開不了。**解法：開新分頁**（fresh renderer）navigate 到 oiioii.ai/home 重來，舊重 tab 可關。
+- ⚠️ 別連點 Agent 兩次（座標 + JS）= 開了又關（toggle）。一種方法就好。
 
 ### 🆕 模型實測成本+品質（2026-06-10 手動模式 4 連測，credits）
 | 模型 | 規格 | credits | 實測結果 |
