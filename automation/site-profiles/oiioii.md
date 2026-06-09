@@ -32,10 +32,23 @@
 **圖片：** **Oii Image 2 [Best]**（超強文字控制+寫實，新旗艦，取代 GPT-Image2）/ Oii Nano Pro / Oii Nano 2 / **Oii 4o**（GPT-4o 改名）/ Midjourney niji7 / Seedream 5.0
 **影片：** Seedance 2.0 pro/fast / Seedance 1.5 Pro / **🆕 Gemini Omni**（Google 模型上架了！）/ **🆕 Oii X Imagine**（新）/ Sora2（仍列，API 代理）/ Vidu Q3 Mix/Ref/Pro·Q2 / Kling 3.0 Pro/std·V3 Omni·O1·2.6 / Hailuo 2.3 Pro/Std / Wan 2.7 / HappyHorse / **Oii Agent**（智能路由）
 
-### 自動化延續性（重要）
-- ✅ **prompt 框仍是 Slate** → `feedback_contenteditable_react_dispatch.md` 的 beforeinput insertFromPaste 注入法**續用**
+### 自動化延續性（✅ 2026-06-10 新 SOP 實機驗證通過）
+
+**完整驗證路徑（跑 Gemini Omni 球鞋廣告實測成功）：**
+```
+1. 左欄「新建」→ /space/{uuid} canvas
+2. 底部「Agent ▾」按鈕 → 模型面板：
+   - 點右上「Agent」toggle 關掉（粉→灰）才能指定模型（ON=AI自動挑）
+   - 影片 tab → 點「Gemini Omni」（或其他）→ 底部變「⚡自由創作 ▾ + Gemini Omni ▾ + 16:9·4s·720p + 20cr」
+3. Slate beforeinput insertFromPaste 注入 → domLen 增加 ✅ 照舊可用
+4. send button class `_send-section_tx61o_*`（仍 _send-section_ 系列）→ 點擊
+5. ⚠️ **prompt 框不會清空**（before==after），但**左側 Oii Agent 面板出現工作流**（藝術總監規劃完成→激活工作流→工作中…）= 生成已啟動。**別只看框沒清空就以為失敗，要看 agent 面板「工作中…」**
+```
+
+- ✅ **prompt 框仍是 Slate** → beforeinput insertFromPaste 注入法續用
 - ⚠️ **入口變了**：舊「新建專案→自由畫布」JS 點擊鏈失效 → 改「左欄新建 → 直接 canvas」
-- ⚠️ **模型選擇器位置變了**：舊「智能模型」按鈕 → 新「Agent ▾」按鈕
+- ⚠️ **模型選擇器位置變了**：舊「智能模型」按鈕 → 新「Agent ▾」按鈕；toggle 名稱 智能模型→**Agent**
+- ⚠️ **Gemini Omni 在 OiiOii 預設 4s / 16:9 / 720p = 20 credits**（比 Flow 的 10s 短，要長要改設定）
 - 🆕 新增 **拉片復刻**（上傳參考影片逐鏡復刻）、**Skill 庫**（左欄技能，可複用 workflow）、**商品展示廣告模板**（產品廣告專用，符合「產品清楚 hero」原則，待深測）
 - 下方舊 §1-§12 SOP 多數仍適用（canvas/Slate/盒飯機制未變），但**入口與模型選擇器步驟以本 §0 為準**
 
