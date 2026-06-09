@@ -28,6 +28,16 @@
 5. 點 send 粉箭頭
 ```
 
+### 🆕 模型實測成本+品質（2026-06-10 手動模式 4 連測，credits）
+| 模型 | 規格 | credits | 實測結果 |
+|---|---|---|---|
+| **Oii Image 2 [Best]** | 圖片海報 | **7** | ✅ **文字渲染旗艦確認**：「Hao0321 COFFEE」品牌名乾淨正確渲染（多數圖模做不到）。要圖內精準文字（海報/包裝/logo）首選 |
+| **Gemini Omni** | 4s 16:9 720p | **20** | ✅ 球鞋 clean concrete hero，多參輸入 |
+| **Oii X Imagine** | 6s 16:9 | **24** | ✅「低成本超寫實」確認，咖啡乾淨寫實 CP 值高 |
+| Seedance 2.0 pro | (見 §12.5 盒飯 formula) | ~ | 影片旗艦 |
+| 商品展示廣告 skill | 15s 16:9 **1080p** | **~1,500** | ✅ 玫瑰金腕錶精緻，但多 gate agent + 1080p，貴 75× |
+> **手動模式（Agent off + 選模型）每支 7-30cr 超便宜**（圖 7cr / 短影片 20-24cr）；skill 模式貴很多（~1500cr）。要大量試/迭代 → 手動。要圖內文字 → Oii Image 2。要低成本影片 → Oii X Imagine / Gemini Omni。
+
 ### 🆕 模型清單變動（2026-06-08 實測）
 **圖片：** **Oii Image 2 [Best]**（超強文字控制+寫實，新旗艦，取代 GPT-Image2）/ Oii Nano Pro / Oii Nano 2 / **Oii 4o**（GPT-4o 改名）/ Midjourney niji7 / Seedream 5.0
 **影片：** Seedance 2.0 pro/fast / Seedance 1.5 Pro / **🆕 Gemini Omni**（Google 模型上架了！）/ **🆕 Oii X Imagine**（新）/ Sora2（仍列，API 代理）/ Vidu Q3 Mix/Ref/Pro·Q2 / Kling 3.0 Pro/std·V3 Omni·O1·2.6 / Hailuo 2.3 Pro/Std / Wan 2.7 / HappyHorse / **Oii Agent**（智能路由）

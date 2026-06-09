@@ -2,6 +2,21 @@
 
 All notable changes to this skill are documented here.
 
+## [1.8.4] - 2026-06-10 — OiiOii 大量實測：手動模式 4 模型連測（成本+品質實證）
+
+OiiOii 大量實測 continued in cheap MANUAL mode (Agent off + pick model) to benchmark the new models the skill did not know:
+
+| Model | Spec | Credits | Verified result |
+|---|---|---|---|
+| Oii Image 2 [Best] | image poster | 7 | TEXT-RENDER FLAGSHIP CONFIRMED — rendered brand name "Hao0321 COFFEE" cleanly+correctly (most image models garble specific text). First choice for in-image text (posters/packaging/logo) |
+| Gemini Omni | 4s 16:9 720p | 20 | sneaker clean concrete hero |
+| Oii X Imagine | 6s 16:9 | 24 | "low-cost ultra-realistic" confirmed (latte) |
+| 商品展示廣告 skill | 15s 1080p | ~1,500 | rose-gold watch polished but ~75x pricier (multi-gate agent + 1080p) |
+
+Decision rule baked into oiioii.md §0: mass-testing/iteration -> manual (7-30cr); in-image text -> Oii Image 2; low-cost video -> X Imagine/Gemini Omni; polished 1080p with real product image -> skill. All outputs were concrete clear heroes (no-abstract rule holding). memory/reference_platform_status_2026_06.md updated with the benchmark.
+
+---
+
 ## [1.8.2] - 2026-06-10 — OiiOii 大量實測 #2：商品展示廣告 skill 完整測繪 + SKILL.md 架構
 
 OiiOii 大量實測 continues. Deep-mapped the 商品展示廣告 (ecommerce_ads_skill) template end-to-end.
