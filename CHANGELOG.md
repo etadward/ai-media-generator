@@ -2,6 +2,24 @@
 
 All notable changes to this skill are documented here.
 
+## [1.8.2] - 2026-06-10 — OiiOii 大量實測 #2：商品展示廣告 skill 完整測繪 + SKILL.md 架構
+
+OiiOii 大量實測 continues. Deep-mapped the 商品展示廣告 (ecommerce_ads_skill) template end-to-end.
+
+🔑 Architecture finding: OiiOii skills are SKILL.md-driven (same concept as Claude/Anthropic skills). The agent literally 讀取 the skill's SKILL.md entry doc to know the steps/constraints. Skill 庫 = a library of SKILL.md-driven guided agent workflows; templates open as /space?skillId=xxx.
+
+商品展示廣告 skill = a very thorough multi-phase guided agent (NOT one-click):
+- Phase A 5-step form: 商品名稱 -> 商品白底圖(可選, auto-generate fallback = i2v shape-lock productized) -> 商品賣點(>=2) -> 影片時長(15s direct / 30s·60s script-then-segment) -> 旁白語言 -> 確認提交
+- Phase B adaptive plan gates (agent streamlines per requirements): 製作流程方案(skip model/scene imgs if not needed) -> 寬高比(16:9/9:16/1:1) -> 光影動態 -> spec confirm (chose Seedance 2.0 Pro, 1080p) -> storyboard confirm -> double-confirm -> generate.
+
+Trade-off baked: the skill is structured/polished and outputs 1080p, but its multi-gate agent reasoning burns heavy credits (~790 just on planning a 15s watch ad, before the video). For speed/economy use manual 自由創作 (test #1: Agent▾ -> Slate inject -> send, 20cr Omni 4s); for guided/polished with a real product image use the skill. Automating the skill needs ~8 extra 下一步/確認 button clicks (locate by textContent).
+
+Also: validated test #1 (new post-redesign SOP + Gemini Omni on OiiOii, sneaker ad, 20cr) already shipped in v1.8.1.
+
+memory/strategy_multimodel_platform_portable.md added (user directive: OiiOii SOP is a portable template for any future multi-model platform).
+
+---
+
 ## [1.8.0] - 2026-06-10 — OiiOii 大改版實機重測（三大新功能 + Gemini Omni 上架）
 
 User flagged OiiOii had a major UI overhaul. Re-mapped live (verify-before-documenting) and baked into oiioii.md §0.
