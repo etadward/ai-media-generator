@@ -273,6 +273,8 @@ Shot 2 — [情節] | prompt preview: [前 1 行]
 3. 每個 click 前 screenshot 定位
 4. 遇到 **paywall / 非預期 modal / 敏感內容 → 立刻停** 問使用者
 
+**長任務韌性（submit → poll → 存 request_id → 重啟續 poll）**：影片 / lipsync 動輒數分鐘。提交生成後**先記下任務識別再等待**——API 路徑（[../references/muapi-api-gateway.md](../references/muapi-api-gateway.md)）存 `request_id`、瀏覽器路徑記下任務頁 URL / job id，寫進進度筆記。session 或分頁掛掉時用它**重新接回輪詢**，不要假設提交當下的分頁全程存活、掉了就整單重來。輪詢套 cache polling（見 [token-efficient-mode.md](token-efficient-mode.md)），不空轉燒 token。
+
 ### 必停的 Checkpoint (超傻瓜模式也要停)
 
 - ⛔ **花錢 / 升級提示** — Paywall modal 出現一定停
