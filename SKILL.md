@@ -1,6 +1,6 @@
 ---
 name: ai-media-generator
-description: 為使用者產生高品質的 AI 生圖、生影片、生音樂提示詞，並在需要時透過瀏覽器自動化實際送到目標平台。涵蓋 OiiOii、Kling 3.0/O-series、Seedance 2.0 pro、Suno v5.5、Seedream 5.0/4.0、Vidu Q3、Midjourney V8.1、Flux 1.1 Pro / Kontext、Runway Gen-4.5 / Aleph、Google Veo 3.1、Ideogram 3、Nano Banana Pro、Stable Diffusion 3.5（⚠️ OpenAI Sora 2 已於 2026-04-26 停運，API 撐到 2026-09-24，預設改推 Runway/Veo/Kling）。只要使用者提到「AI 生圖」「AI 影片」「AI 音樂」「做 MV」「做 storyboard」「寫 prompt 給 XXX」「我想用 Kling/Suno/Midjourney/Runway/Veo...」「幫我操作 OiiOii / 即夢 / 可靈」「txt2img / img2video / 文生圖 / 文生影片 / 圖生影片」「角色一致性」「多鏡頭分鏡」「運鏡」「結果有瑕疵 / 不夠精緻 / 怎麼修」，或任何跟上述平台或影像/影片/音樂生成工作流相關的任務，都要用這個 skill。即使他們沒講明平台，只要任務是要餵給某個生成模型的 prompt，就用這個 skill 幫他們選對的平台、寫對的格式。
+description: 為使用者產生高品質的 AI 生圖、生影片、生音樂提示詞，並在需要時透過瀏覽器自動化實際送到目標平台。涵蓋 OiiOii、Kling 3.0/O-series、Seedance 2.0 pro、Suno v5.5、Seedream 5.0/4.0、Vidu Q3、Midjourney V8.1、Flux 1.1 Pro / Kontext、Runway Gen-4.5 / Aleph、Google Veo 3.1、Ideogram 3、Nano Banana Pro、Stable Diffusion 3.5、Grok Imagine（xAI 圖+影片，至多 720p 短片）（⚠️ OpenAI Sora 2 已於 2026-04-26 停運，API 撐到 2026-09-24，預設改推 Runway/Veo/Kling）。只要使用者提到「AI 生圖」「AI 影片」「AI 音樂」「做 MV」「做 storyboard」「寫 prompt 給 XXX」「我想用 Kling/Suno/Midjourney/Runway/Veo/Grok...」「幫我操作 OiiOii / 即夢 / 可靈」「txt2img / img2video / 文生圖 / 文生影片 / 圖生影片」「角色一致性」「多鏡頭分鏡」「運鏡」「結果有瑕疵 / 不夠精緻 / 怎麼修」，或任何跟上述平台或影像/影片/音樂生成工作流相關的任務，都要用這個 skill。即使他們沒講明平台，只要任務是要餵給某個生成模型的 prompt，就用這個 skill 幫他們選對的平台、寫對的格式。
 ---
 
 # AI Media Generator
@@ -144,6 +144,7 @@ Prompt 寫完問自己：
 - Google **Veo 3.1 + 🆕 Gemini Omni**（Google 雙旗艦：4K 畫質線 + 對話編輯線，I/O 2026 發表）→ [references/veo.md](references/veo.md)
 - Hailuo 2.3（角色表演）/ Wan 2.7·2.6（複雜場景/對白）/ HappyHorse（敘事音畫）→ 見 [references/model-picker.md](references/model-picker.md)
 - ⚠️ OpenAI Sora 2 → [references/sora.md](references/sora.md)（**已停運** — app 2026-04-26 關，API 2026-09-24 關。讀此檔只為了解替代方案；新任務改用 Veo/Gemini Omni/Runway/Kling）
+- 🆕 Grok Imagine Video 1.5（xAI，至多 720p 短片約 1–15s，t2v/i2v，Extend 接長）→ [references/grok.md](references/grok.md)
 
 **圖片 (Image)**
 - Seedream 5.0 / 4.0 → [references/seedream.md](references/seedream.md)
@@ -151,6 +152,7 @@ Prompt 寫完問自己：
 - Flux 1.1 Pro / Kontext → [references/flux.md](references/flux.md)
 - Ideogram 3 → [references/ideogram.md](references/ideogram.md)
 - Stable Diffusion 3.5 / SDXL → [references/stable-diffusion.md](references/stable-diffusion.md)
+- 🆕 Grok Imagine（xAI 圖生成 + 自然語言改圖 + 多圖合成，一次回 6 張）→ [references/grok.md](references/grok.md)
 
 **音樂 (Music)**
 - Suno v5.5（Personas 已改名 Voices） → [references/suno.md](references/suno.md)
