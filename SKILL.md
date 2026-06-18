@@ -218,7 +218,7 @@ Prompt 寫完問自己：
 - [automation/browser-guide.md](automation/browser-guide.md)
 
 **4. API 備援 (瀏覽器路徑 flaky / login-gated 時)**
-- [references/muapi-api-gateway.md](references/muapi-api-gateway.md) — MuAPI unified gateway（單一 `x-api-key`、submit→poll、200+ 模型涵蓋 Nano Banana/Seedance/Veo/Kling 等）。某平台瀏覽器 UI 卡住 / 改版 / 擋登入時改走 API；**付費計量，定位 fallback 不取代瀏覽器自動化**，兩條路並存
+- [references/muapi-api-gateway.md](references/muapi-api-gateway.md) — MuAPI unified gateway（單一 `x-api-key`、submit→poll、200+ 模型涵蓋 Nano Banana/Seedance/Veo/Kling 等）。某平台瀏覽器 UI 卡住 / 改版 / 擋登入時改走 API；**付費計量，定位 fallback 不取代瀏覽器自動化**，兩條路並存。⚠️ **per-generation 付費，切換前須取得使用者明確同意（§0 I2）— 不自動切**
 
 **送出前必做的安全檢查 (見 click-protocol.md 詳細)：**
 - 確認使用者已登入目標站 (**絕不代輸入密碼**)

@@ -23,7 +23,15 @@ GET https://api.muapi.ai/api/v1/predictions/{request_id}/result
 
 **金鑰走 OpenClaw 後端 / .env，不寫進對話**（依 Security Baseline：secret ingress/egress）。不要把 `x-api-key` 印進 transcript 或外送通道。
 
-## 何時切過來（trigger）
+## ⚠️ 切換前必取得使用者明確同意（付費，§0 I2）
+
+MuAPI 是 **per-generation 付費**，切過去 = 花錢。依 §0 **I2（金錢相關）**＋本 skill 既有邊界「**非使用者明確要求走 API，否則不主動呼叫**」：
+
+- **瀏覽器路徑 flaky 時不自動切 MuAPI**。先告知使用者「瀏覽器路徑卡住，MuAPI 是付費備援，每次生成計費約 X，要切嗎？」並取得**當前對話的明確同意**後才走。
+- 同意後才需要 `x-api-key`（走 OpenClaw 後端 / .env，不入對話）。
+- 無人值守 / cron 情境：除非使用者**事先明確授權**該批次走付費 API，否則停下回報、不自行切換。
+
+## 何時切過來（trigger，皆需先過上方同意 gate）
 
 - 某平台瀏覽器 profile 連續失敗（login wall / DOM 改版 / anomaly flag 擋住）且短期修不動。
 - 需要批次 / 無人值守生成，瀏覽器分頁掛著不可靠時。
