@@ -213,6 +213,7 @@ Prompt 寫完問自己：
   - ✅ [oiioii.md](automation/site-profiles/oiioii.md) — 完整驗證 Phase 1-3E (止於付費牆)
   - ✅ [flow.md](automation/site-profiles/flow.md) — 完整驗證 Phase 1-6 (Veo 3.1 Fast/Quality/Lite)
   - ✅ [kling.md](automation/site-profiles/kling.md) — 完整驗證 Phase 1-7 (Kling 3.0 + credits + Fast-Track)
+  - ✅ [grok.md](automation/site-profiles/grok.md) — Grok Imagine 批次自動化後端 (CDP + 內部 endpoint + statsig 擷取，[grok_batch.py](automation/grok_batch.py)；≤720p 短片)
   - ⏳ 其他平台 (Suno / Runway / MJ 等) 待操作時補
   - 📝 [_template.md](automation/site-profiles/_template.md) — 新網站 profile 模板
 

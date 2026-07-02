@@ -21,3 +21,8 @@ memory/
 *.log
 output/
 artifacts/
+grok_downloads/
+
+# Python
+__pycache__/
+*.pyc

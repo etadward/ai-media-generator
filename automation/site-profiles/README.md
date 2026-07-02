@@ -9,6 +9,7 @@
 | OiiOii.ai | ✅ 2026-04-18/19 | [oiioii.md](oiioii.md) | 完整 phase 1-3E (止於分鏡師付費牆 $7) |
 | Google Flow (Veo 3.1) | ✅ 2026-04-19 | [flow.md](flow.md) | **完整 Phase 1-6**，Fast/Quality/Lite 已測 |
 | Kling 3.0 | ✅ 2026-04-20 | [kling.md](kling.md) | **完整 Phase 1-7**，3.0 + Fast-Track + Native Audio |
+| Grok Imagine (xAI) | ⚠️ 2026-07-02 | [grok.md](grok.md) | 批次自動化後端：CDP + 內部 endpoint + statsig 擷取（[grok_batch.py](../grok_batch.py)）；≤720p 短片；UI 座標待補 |
 | Suno v5 | ✅ 2026-04-20 | [suno.md](suno.md) | **完整 Phase 1-9** + Speed Optimization (5 首歌 chain SOP) |
 | Midjourney v7 | 📝 Stub | [midjourney.md](midjourney.md) | Web + Discord 兩種模式 |
 | Seedream (即夢 / 豆包) | 📝 Stub | [seedream.md](seedream.md) | 三入口 + 中國區登入特殊 |
