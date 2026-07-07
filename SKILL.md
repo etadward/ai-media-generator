@@ -141,8 +141,8 @@ Prompt 寫完問自己：
 - Seedance 2.0 pro / 1.0 Pro / Lite（OiiOii 影片旗艦，`@AssetName` 標記）→ [references/seedance.md](references/seedance.md)
 - Vidu Q3 Mix/Ref/Pro（動漫 + 多角色一致，`@tag` 多參 + HEX 鎖色）→ [references/vidu.md](references/vidu.md)
 - Runway Gen-4.5 / Aleph / Act-Two → [references/runway.md](references/runway.md)
-- Google **Veo 3.1 + 🆕 Gemini Omni**（Google 雙旗艦：4K 畫質線 + 對話編輯線，I/O 2026 發表）→ [references/veo.md](references/veo.md)
-- Hailuo 2.3（角色表演）/ Wan 2.7·2.6（複雜場景/對白）/ HappyHorse（敘事音畫）→ 見 [references/model-picker.md](references/model-picker.md)
+- Google **Veo 3.1**（4K 畫質線）→ [references/veo.md](references/veo.md)｜🆕 **Gemini Omni**（對話式多模態、多輪編輯、any-to-any）→ [references/gemini-omni.md](references/gemini-omni.md)（Google 雙旗艦，I/O 2026 發表）
+- 🆕 **Hailuo 2.3 Pro/Std**（角色表演/微表情旗艦，5s）→ [references/hailuo.md](references/hailuo.md)｜Wan 2.7·2.6（複雜場景/對白）/ HappyHorse（敘事音畫）→ 見 [references/model-picker.md](references/model-picker.md)
 - ⚠️ OpenAI Sora 2 → [references/sora.md](references/sora.md)（**已停運** — app 2026-04-26 關，API 2026-09-24 關。讀此檔只為了解替代方案；新任務改用 Veo/Gemini Omni/Runway/Kling）
 - 🆕 Grok Imagine Video 1.5（xAI，至多 720p 短片約 1–15s，t2v/i2v，Extend 接長）→ [references/grok.md](references/grok.md)
 
