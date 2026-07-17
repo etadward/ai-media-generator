@@ -187,13 +187,22 @@ Prompt 寫完問自己：
 - **快速：抽一個現成 preset 套用** (30 個電影/廣告/MV/VFX/短影音 preset) → [templates/preset-packs.md](templates/preset-packs.md)
 - **複雜多步驟任務 (> 15s 影片 / 多角色一致 / 品牌包 / 專輯 / MV 一條龍)** → [templates/advanced-recipes.md](templates/advanced-recipes.md) 13 個 chain workflow (Extend / Persona / Motion Control / Cameo 等進階功能組合)
 - **重用角色/風格/場景卡** → [templates/asset-library.md](templates/asset-library.md)
-- 多鏡頭 / 分鏡故事片 → [templates/storyboard.md](templates/storyboard.md)
+- 多鏡頭 / 分鏡故事片 → [templates/storyboard.md](templates/storyboard.md)；**連續續接（extend/img2video 接龍）→ 見下方「多鏡頭續接紀律」**
 - 音樂影片 / MV → [templates/music-video.md](templates/music-video.md)
 - 常用負面提示詞 → [templates/negative-bank.md](templates/negative-bank.md)
 - **社群多版本 / 預算 flag / 平台 flag / 風格 flag** → [templates/user-flags.md](templates/user-flags.md)
 - **大專案省 token** → [templates/token-efficient-mode.md](templates/token-efficient-mode.md)
 
 **preset-packs.md 的用法：** 使用者要「Wes Anderson 風」「Nike 廣告感」「賽博龐克雨夜」「水下夢境」等明確風格時，**先到 preset-packs.md 找最近的 preset**，換占位符即可，不用每次從零組 prompt。若使用者要的風格不在 preset 裡，再從 [cinematic-direction.md](references/cinematic-direction.md) / [commercial-direction.md](references/commercial-direction.md) / [vfx-effects.md](references/vfx-effects.md) 現場組。
+
+### 多鏡頭續接紀律（img2video 接龍防漂移）
+
+短影音/長敘事用 img2video 連續續接（上一段末幀 → 下一段輸入）時，守兩條：
+
+1. **chain-depth ≤ 3 必回錨**：從最近一次「canonical 參考圖」（角色卡原圖/首鏡定裝幀）起算，連續生成不超過 3 段；到頂就別再拿第 3 段的末幀續，回到 canonical 參考圖重新起鏈——角色長相/場景色調的漂移是逐段累積的，回錨是唯一止損。
+2. **末幀抽取用工具不用截圖**：`python3 automation/extract_frame.py --last <上一段.mp4>` 抽末幀 PNG（`--first` 抽首幀；`--self-test` 自檢），比手動截圖穩定且無 UI 雜訊。
+
+（紀律源自 Seedance 2.0 Skill OS v6.4.0 scene layer 的 max_chain_depth 設計，引擎無關——Kling/Seedance/Veo/Runway 的續接都適用；evaluate 記錄見 memory reference_seedance_20_skill_os.md）
 
 ### Step 4 — 組出 prompt 並輸出
 
@@ -287,3 +296,7 @@ Prompt 寫完問自己：
 - 各模型「最強情境 + 招牌 prompt 技巧」見 [references/model-picker.md](references/model-picker.md)；「prompt 沒主題/畫面空/效果差」見 [references/concept-first-prompting.md](references/concept-first-prompting.md)。
 
 各模型「禁忌 / 版本推翻歷史」見 [references/community-prompt-patterns.md](references/community-prompt-patterns.md)；結果有瑕疵的修法見 [references/quality-control.md](references/quality-control.md)。
+
+## Lessons Learned
+
+- [2026-07-17] 自 seedance-2.0 v6.6.0 evaluate 借鏡：新增 automation/extract_frame.py（末幀/首幀抽取，MIT attribution）與「多鏡頭續接紀律」段（chain-depth ≤3 回錨）。felt_intent 欄位評估後未採（與既有 mood/atmosphere 欄重疊）。
